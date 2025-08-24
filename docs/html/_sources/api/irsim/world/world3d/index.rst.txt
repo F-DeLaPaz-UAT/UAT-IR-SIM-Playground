@@ -1,0 +1,115 @@
+irsim.world.world3d
+===================
+
+.. py:module:: irsim.world.world3d
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   irsim.world.world3d.World3D
+
+
+Module Contents
+---------------
+
+.. py:class:: World3D(name: str, depth: float = 10.0, offset: Optional[list[float]] = None, **kwargs: Any)
+
+   Bases: :py:obj:`irsim.world.world.World`
+
+
+   Represents the main simulation environment, managing objects and maps.
+
+   .. attribute:: name
+
+      Name of the world.
+
+      :type: str
+
+   .. attribute:: height
+
+      Height of the world.
+
+      :type: float
+
+   .. attribute:: width
+
+      Width of the world.
+
+      :type: float
+
+   .. attribute:: step_time
+
+      Time interval between steps.
+
+      :type: float
+
+   .. attribute:: sample_time
+
+      Time interval between samples.
+
+      :type: float
+
+   .. attribute:: offset
+
+      Offset for the world's position.
+
+      :type: list
+
+   .. attribute:: control_mode
+
+      Control mode ('auto' or 'keyboard').
+
+      :type: str
+
+   .. attribute:: collision_mode
+
+      Collision mode ('stop',  , 'unobstructed').
+
+      :type: str
+
+   .. attribute:: obstacle_map
+
+      Image file for the obstacle map.
+
+   .. attribute:: mdownsample
+
+      Downsampling factor for the obstacle map.
+
+      :type: int
+
+   .. attribute:: status
+
+      Status of the world and objects.
+
+   .. attribute:: plot
+
+      Plot configuration for the world.
+
+   Initialize a 3D world extending the 2D world with depth.
+
+   :param name: World name or YAML file path.
+   :type name: str
+   :param depth: Z-depth of the world (range in z). Default 10.0.
+   :type depth: float
+   :param offset: [x, y, z] world offset. If a 2D
+                  [x, y] is provided, z defaults to 0.
+   :type offset: list[float] | None
+   :param \*\*kwargs: Forwarded to the base ``World`` constructor.
+
+
+   .. py:attribute:: depth
+      :value: 10.0
+
+
+
+   .. py:attribute:: offset
+      :value: None
+
+
+
+   .. py:attribute:: z_range
+
+

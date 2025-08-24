@@ -1,0 +1,36 @@
+irsim.world.sensors.sensor_factory
+==================================
+
+.. py:module:: irsim.world.sensors.sensor_factory
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   irsim.world.sensors.sensor_factory.SensorFactory
+
+
+Module Contents
+---------------
+
+.. py:class:: SensorFactory
+
+   .. py:method:: create_sensor(state: numpy.ndarray, obj_id: int, **kwargs: Any) -> Any
+
+      Create a sensor instance from configuration kwargs.
+
+      :param state: Initial sensor state.
+      :type state: np.ndarray
+      :param obj_id: Associated object id.
+      :type obj_id: int
+      :param \*\*kwargs: Sensor configuration; expects 'name' or 'type'.
+
+      :returns: A concrete sensor instance (e.g., Lidar2D).
+      :rtype: Any
+
+      :raises NotImplementedError: If the requested sensor type is not supported.
+
+
+

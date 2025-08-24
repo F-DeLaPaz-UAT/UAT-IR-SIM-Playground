@@ -1,0 +1,31 @@
+irsim.env.env_base3d
+====================
+
+.. py:module:: irsim.env.env_base3d
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   irsim.env.env_base3d.EnvBase3D
+
+
+Module Contents
+---------------
+
+.. py:class:: EnvBase3D(world_name: Optional[str], **kwargs: Any)
+
+   Bases: :py:obj:`irsim.env.EnvBase`
+
+
+   This class is the 3D version of the environment class. It inherits from the :py:class:`.EnvBase` class to provide the 3D plot environment.
+
+   Initialize a 3D environment with world and objects parsed from YAML.
+
+   :param world_name: Path to the world configuration YAML.
+   :type world_name: str | None
+   :param \*\*kwargs: Additional environment options forwarded to ``EnvBase``.
+
+
