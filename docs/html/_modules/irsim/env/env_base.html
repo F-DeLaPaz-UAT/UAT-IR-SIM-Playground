@@ -1,0 +1,1680 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>irsim.env.env_base &#8212; IR-SIM 2.7.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/my_theme.css?v=20c2511c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=dfec817d"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/tabs.js?v=3ee01567"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/irsim/env/env_base';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://raw.githubusercontent.com/hanruihua/ir-sim/main/docs/source/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '2.7.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <script defer="defer" src="../../../_static/custom-icons.js?v=5b19a0d0"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">IR-SIM 2.7.0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../get_started/index.html">
+    Get Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../usage/index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../yaml_config/index.html">
+    YAML Configuration Syntax
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../api/index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/hanruihua/ir-sim" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/ir-sim/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-custom fa-pypi fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../get_started/index.html">
+    Get Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../usage/index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../yaml_config/index.html">
+    YAML Configuration Syntax
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../api/index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/hanruihua/ir-sim" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/ir-sim/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-custom fa-pypi fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../../irsim.html" class="nav-link">irsim</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">irsim.env.env_base</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for irsim.env.env_base</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Class EnvBase is the base class of the environment. This class will read the yaml file and create the world, robot, obstacle, and map objects.</span>
+
+<span class="sd">Author: Ruihua Han</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">importlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">platform</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">operator</span><span class="w"> </span><span class="kn">import</span> <span class="n">attrgetter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">shapely</span><span class="w"> </span><span class="kn">import</span> <span class="n">Polygon</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">shapely.strtree</span><span class="w"> </span><span class="kn">import</span> <span class="n">STRtree</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">irsim.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">env_param</span><span class="p">,</span> <span class="n">world_param</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">irsim.env.env_config</span><span class="w"> </span><span class="kn">import</span> <span class="n">EnvConfig</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">irsim.gui.mouse_control</span><span class="w"> </span><span class="kn">import</span> <span class="n">MouseControl</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">irsim.lib</span><span class="w"> </span><span class="kn">import</span> <span class="n">random_generate_polygon</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">irsim.world</span><span class="w"> </span><span class="kn">import</span> <span class="n">ObjectBase</span><span class="p">,</span> <span class="n">World</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">irsim.world.object_factory</span><span class="w"> </span><span class="kn">import</span> <span class="n">ObjectFactory</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">.env_logger</span><span class="w"> </span><span class="kn">import</span> <span class="n">EnvLogger</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.env_plot</span><span class="w"> </span><span class="kn">import</span> <span class="n">EnvPlot</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">irsim.gui.keyboard_control</span><span class="w"> </span><span class="kn">import</span> <span class="n">KeyboardControl</span>
+
+    <span class="n">keyboard_module</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">keyboard_module</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1"># Define backend preferences for different operating systems</span>
+<span class="n">BACKEND_PREFERENCES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Darwin&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;MacOSX&quot;</span><span class="p">,</span> <span class="s2">&quot;TkAgg&quot;</span><span class="p">,</span> <span class="s2">&quot;Qt5Agg&quot;</span><span class="p">,</span> <span class="s2">&quot;Agg&quot;</span><span class="p">],</span>  <span class="c1"># macOS</span>
+    <span class="s2">&quot;Windows&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;TkAgg&quot;</span><span class="p">,</span> <span class="s2">&quot;Qt5Agg&quot;</span><span class="p">,</span> <span class="s2">&quot;Agg&quot;</span><span class="p">],</span>  <span class="c1"># Windows</span>
+    <span class="s2">&quot;Linux&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;TkAgg&quot;</span><span class="p">,</span> <span class="s2">&quot;Qt5Agg&quot;</span><span class="p">,</span> <span class="s2">&quot;Agg&quot;</span><span class="p">],</span>  <span class="c1"># Linux</span>
+<span class="p">}</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_set_matplotlib_backend</span><span class="p">(</span><span class="n">backend_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Attempt to set matplotlib backend from preference list.&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">backend</span> <span class="ow">in</span> <span class="n">backend_list</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="n">backend</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to use &#39;</span><span class="si">{</span><span class="n">backend</span><span class="si">}</span><span class="s2">&#39; backend: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="s2">&quot;All backends failed. Falling back to &#39;Agg&#39; backend. The environment will not be displayed.&quot;</span>
+    <span class="p">)</span>
+    <span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;Agg&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">False</span>
+
+
+<span class="c1"># Get the current operating system from env_param and set backend</span>
+<span class="n">backends</span> <span class="o">=</span> <span class="n">BACKEND_PREFERENCES</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">env_param</span><span class="o">.</span><span class="n">platform_name</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Agg&quot;</span><span class="p">])</span>
+<span class="n">backend_set</span> <span class="o">=</span> <span class="n">_set_matplotlib_backend</span><span class="p">(</span><span class="n">backends</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="EnvBase">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">EnvBase</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The base class for simulation environments in IR-SIM.</span>
+
+<span class="sd">    This class serves as the foundation for creating and managing robotic simulation</span>
+<span class="sd">    environments. It reads YAML configuration files to create worlds, robots, obstacles,</span>
+<span class="sd">    and map objects, and provides the core simulation loop functionality.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        world_name (str, optional): Path to the world YAML configuration file.</span>
+<span class="sd">            If None, the environment will attempt to find a default configuration</span>
+<span class="sd">            or use a minimal setup.</span>
+<span class="sd">        display (bool): Whether to display the environment visualization.</span>
+<span class="sd">            Set to False for headless operation. Default is True.</span>
+<span class="sd">        disable_all_plot (bool): Whether to disable all plots and figures completely.</span>
+<span class="sd">            When True, no visualization will be created even if display is True.</span>
+<span class="sd">            Default is False.</span>
+<span class="sd">        save_ani (bool): Whether to save the simulation as an animation file.</span>
+<span class="sd">            Useful for creating videos of simulation runs. Default is False.</span>
+<span class="sd">        full (bool): Whether to display the visualization in full screen mode.</span>
+<span class="sd">            Only effective on supported platforms. Default is False.</span>
+<span class="sd">        log_file (str, optional): Path to the log file for saving simulation logs.</span>
+<span class="sd">            If None, logs will only be output to console.</span>
+<span class="sd">        log_level (str): Logging level for the environment. Options include</span>
+<span class="sd">            &#39;DEBUG&#39;, &#39;INFO&#39;, &#39;WARNING&#39;, &#39;ERROR&#39;, &#39;CRITICAL&#39;. Default is &#39;INFO&#39;.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        display (bool): Display flag for the environment.</span>
+<span class="sd">        disable_all_plot (bool): Plot disable flag.</span>
+<span class="sd">        save_ani (bool): Animation saving flag.</span>
+<span class="sd">        objects (list): List of all objects in the environment.</span>
+<span class="sd">        world (World): The world object containing environment configuration.</span>
+<span class="sd">        robot_collection (list): List of robot objects.</span>
+<span class="sd">        obstacle_collection (list): List of obstacle objects.</span>
+<span class="sd">        map_collection (list): List of map objects.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; # Create a basic environment</span>
+<span class="sd">        &gt;&gt;&gt; env = EnvBase(&quot;my_world.yaml&quot;)</span>
+<span class="sd">        &gt;&gt;&gt;</span>
+<span class="sd">        &gt;&gt;&gt; # Create headless environment for training</span>
+<span class="sd">        &gt;&gt;&gt; env = EnvBase(&quot;world.yaml&quot;, display=False, log_level=&quot;WARNING&quot;)</span>
+<span class="sd">        &gt;&gt;&gt;</span>
+<span class="sd">        &gt;&gt;&gt; # Create environment with animation saving</span>
+<span class="sd">        &gt;&gt;&gt; env = EnvBase(&quot;world.yaml&quot;, save_ani=True, full=True)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">world_name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">display</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">disable_all_plot</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">save_ani</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">full</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">log_file</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">log_level</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># init env setting</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">display</span> <span class="o">=</span> <span class="n">display</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">display</span><span class="p">:</span>
+            <span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;Agg&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">disable_all_plot</span> <span class="o">=</span> <span class="n">disable_all_plot</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">save_ani</span> <span class="o">=</span> <span class="n">save_ani</span>
+        <span class="n">env_param</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="n">EnvLogger</span><span class="p">(</span><span class="n">log_file</span><span class="p">,</span> <span class="n">log_level</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">env_config</span> <span class="o">=</span> <span class="n">EnvConfig</span><span class="p">(</span><span class="n">world_name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">object_factory</span> <span class="o">=</span> <span class="n">ObjectFactory</span><span class="p">()</span>
+        <span class="c1"># init objects (world, obstacle, robot)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_world</span> <span class="o">=</span> <span class="n">World</span><span class="p">(</span><span class="n">world_name</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">env_config</span><span class="o">.</span><span class="n">parse</span><span class="p">[</span><span class="s2">&quot;world&quot;</span><span class="p">])</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_robot_collection</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">object_factory</span><span class="o">.</span><span class="n">create_from_parse</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">env_config</span><span class="o">.</span><span class="n">parse</span><span class="p">[</span><span class="s2">&quot;robot&quot;</span><span class="p">],</span> <span class="s2">&quot;robot&quot;</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_obstacle_collection</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">object_factory</span><span class="o">.</span><span class="n">create_from_parse</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">env_config</span><span class="o">.</span><span class="n">parse</span><span class="p">[</span><span class="s2">&quot;obstacle&quot;</span><span class="p">],</span> <span class="s2">&quot;obstacle&quot;</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_map_collection</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">object_factory</span><span class="o">.</span><span class="n">create_from_map</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_world</span><span class="o">.</span><span class="n">obstacle_positions</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_world</span><span class="o">.</span><span class="n">buffer_reso</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_objects</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_robot_collection</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_obstacle_collection</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_map_collection</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_objects</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">attrgetter</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">build_tree</span><span class="p">()</span>
+
+        <span class="c1"># env parameters</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_env_plot</span> <span class="o">=</span> <span class="n">EnvPlot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_world</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_world</span><span class="o">.</span><span class="n">plot_parse</span><span class="p">)</span>
+
+        <span class="n">env_param</span><span class="o">.</span><span class="n">objects</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span>
+
+        <span class="k">if</span> <span class="n">world_param</span><span class="o">.</span><span class="n">control_mode</span> <span class="o">==</span> <span class="s2">&quot;keyboard&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">keyboard_module</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+                    <span class="s2">&quot;Keyboard module is not installed. Auto control applied. Please install the dependency by &#39;pip install ir-sim[keyboard]&#39;.&quot;</span>
+                <span class="p">)</span>
+                <span class="n">world_param</span><span class="o">.</span><span class="n">control_mode</span> <span class="o">=</span> <span class="s2">&quot;auto&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">keyboard</span> <span class="o">=</span> <span class="n">KeyboardControl</span><span class="p">(</span>
+                    <span class="n">env_ref</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">env_config</span><span class="o">.</span><span class="n">parse</span><span class="p">[</span><span class="s2">&quot;keyboard&quot;</span><span class="p">]</span>
+                <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">mouse</span> <span class="o">=</span> <span class="n">MouseControl</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_env_plot</span><span class="o">.</span><span class="n">ax</span><span class="p">)</span>
+
+        <span class="c1"># flag</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pause_flag</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="k">if</span> <span class="n">full</span><span class="p">:</span>
+            <span class="n">system_platform</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">system_platform</span> <span class="o">==</span> <span class="s2">&quot;Linux&quot;</span> <span class="ow">or</span> <span class="n">system_platform</span> <span class="o">==</span> <span class="s2">&quot;Windows&quot;</span><span class="p">:</span>
+                <span class="n">mng</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">get_current_fig_manager</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">mng</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">mng</span><span class="o">.</span><span class="n">full_screen_toggle</span><span class="p">()</span>
+
+        <span class="c1"># Log simulation start</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Simulation environment &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_world</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; has been initialized and started.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Clean up resources when the environment is garbage-collected.</span>
+
+<span class="sd">        Note:</span>
+<span class="sd">            Main resource cleanup is performed in :py:meth:`end`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a human-readable summary of the environment.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: Summary string including the world name.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Environment: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_world</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<div class="viewcode-block" id="EnvBase.step">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.step">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">step</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">action</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">action_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]]]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Perform a single simulation step in the environment.</span>
+
+<span class="sd">        This method advances the simulation by one time step, applying the given actions</span>
+<span class="sd">        to the specified robots and updating all objects in the environment.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            action (Union[np.ndarray, list], optional): Action(s) to be performed in the environment.</span>
+<span class="sd">                Can be a single action or a list of actions. Action format depends on robot type:</span>
+
+<span class="sd">                - **Differential robot**: [linear_velocity, angular_velocity]</span>
+<span class="sd">                - **Omnidirectional robot**: [velocity_x, velocity_y]</span>
+<span class="sd">                - **Ackermann robot**: [linear_velocity, steering_angle]</span>
+
+<span class="sd">                If None, robots will use their default behavior or keyboard control if enabled.</span>
+
+<span class="sd">            action_id (Union[int, list], optional): ID(s) of the robot(s) to apply the action(s) to.</span>
+<span class="sd">                Can be a single robot ID or a list of IDs. Default is 0 (first robot).</span>
+<span class="sd">                If action is a list and action_id is a single int, all actions will be</span>
+<span class="sd">                applied to robots sequentially starting from action_id.</span>
+
+<span class="sd">        Note:</span>
+<span class="sd">            - If the environment is paused, this method returns without performing any updates.</span>
+<span class="sd">            - The method automatically handles collision detection, status updates, and plotting.</span>
+<span class="sd">            - In keyboard control mode, the action parameter is ignored and keyboard input is used.</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; # Move first robot with differential drive</span>
+<span class="sd">            &gt;&gt;&gt; env.step([1.0, 0.5])  # 1.0 m/s forward, 0.5 rad/s turn</span>
+<span class="sd">            &gt;&gt;&gt;</span>
+<span class="sd">            &gt;&gt;&gt; # Move specific robot by ID</span>
+<span class="sd">            &gt;&gt;&gt; env.step([0.8, 0.0], action_id=2)  # Move robot with ID 2</span>
+<span class="sd">            &gt;&gt;&gt;</span>
+<span class="sd">            &gt;&gt;&gt; # Move multiple robots</span>
+<span class="sd">            &gt;&gt;&gt; actions = [[1.0, 0.0], [0.5, 0.3]]</span>
+<span class="sd">            &gt;&gt;&gt; env.step(actions, action_id=[0, 1])  # Move robots 0 and 1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pause_flag</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">action</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">action_id</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">ai</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">action</span><span class="p">,</span> <span class="n">action_id</span><span class="p">):</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_object_step</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">ai</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_objects_step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">world_param</span><span class="o">.</span><span class="n">control_mode</span> <span class="o">==</span> <span class="s2">&quot;keyboard&quot;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_object_step</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">key_vel</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">key_id</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">action_id</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_object_step</span><span class="p">(</span><span class="n">action</span><span class="p">,</span> <span class="n">action_id</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_object_step</span><span class="p">(</span><span class="n">action</span><span class="p">,</span> <span class="n">action_id</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">build_tree</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_objects_check_status</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_world</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">step_status</span><span class="p">()</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_objects_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Advance all objects by one step with corresponding actions.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            action (list[Any]): A list of actions aligned with ``self.objects``.</span>
+<span class="sd">                If the list is shorter than the number of objects, it is padded</span>
+<span class="sd">                with ``None`` for the remaining objects.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">action</span> <span class="o">=</span> <span class="n">action</span> <span class="o">+</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">action</span><span class="p">))</span>
+        <span class="p">[</span><span class="n">obj</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span> <span class="k">for</span> <span class="n">obj</span><span class="p">,</span> <span class="n">action</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">,</span> <span class="n">action</span><span class="p">)]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_object_step</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">obj_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Advance a single object by one step and tick others.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            action (np.ndarray | list | None): Action applied to the target object.</span>
+<span class="sd">            obj_id (int): Target object index (or id-aligned index). Default is ``0``.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="n">obj_id</span><span class="p">]</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+        <span class="p">[</span><span class="n">obj</span><span class="o">.</span><span class="n">step</span><span class="p">()</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span> <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">_id</span> <span class="o">!=</span> <span class="n">obj_id</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_objects_check_status</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Refresh per-object status flags (e.g., arrival, collision).&quot;&quot;&quot;</span>
+        <span class="p">[</span><span class="n">obj</span><span class="o">.</span><span class="n">check_status</span><span class="p">()</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">]</span>
+
+    <span class="c1"># render</span>
+<div class="viewcode-block" id="EnvBase.render">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.render">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">render</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">interval</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.02</span><span class="p">,</span>
+        <span class="n">figure_kwargs</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;dynamic&quot;</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Render the environment.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            interval(float) :  Time interval between frames in seconds.</span>
+<span class="sd">            figure_kwargs(dict) : Additional keyword arguments for saving figures, see `savefig &lt;https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.savefig.html&gt;`_ for detail.</span>
+<span class="sd">            mode(str) : &quot;dynamic&quot;, &quot;static&quot;, &quot;all&quot; to specify which type of objects to draw and clear.</span>
+<span class="sd">            kwargs: Additional keyword arguments for drawing components. see :py:meth:`.ObjectBase.plot` function for detail.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">figure_kwargs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">figure_kwargs</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">disable_all_plot</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_world</span><span class="o">.</span><span class="n">sampling</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">display</span><span class="p">:</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="n">interval</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_ani</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">save_figure</span><span class="p">(</span><span class="n">save_gif</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">figure_kwargs</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">_env_plot</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EnvBase.show">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.show">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Show the environment figure.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_env_plot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></div>
+
+
+    <span class="c1"># draw various components</span>
+<div class="viewcode-block" id="EnvBase.draw_trajectory">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.draw_trajectory">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw_trajectory</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">traj</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span> <span class="n">traj_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;g-&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Draw the trajectory on the environment figure.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            traj (list): List of trajectory points (2 * 1 vector).</span>
+<span class="sd">            traj_type: Type of the trajectory line, see matplotlib plot function for detail.</span>
+<span class="sd">            **kwargs: Additional keyword arguments for drawing the trajectory, see :py:meth:`.EnvPlot.draw_trajectory` for detail.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_env_plot</span><span class="o">.</span><span class="n">draw_trajectory</span><span class="p">(</span><span class="n">traj</span><span class="p">,</span> <span class="n">traj_type</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EnvBase.draw_points">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.draw_points">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw_points</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">points</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
+        <span class="n">s</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
+        <span class="n">c</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span>
+        <span class="n">refresh</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Draw points on the environment figure.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            points (list): List of points (2*1) to be drawn.</span>
+<span class="sd">                or (np.array): (2, Num) to be drawn.</span>
+<span class="sd">            s (int): Size of the points.</span>
+<span class="sd">            c (str): Color of the points.</span>
+<span class="sd">            refresh (bool): Flag to refresh the points in the figure.</span>
+<span class="sd">            **kwargs: Additional keyword arguments for drawing the points, see `ax.scatter &lt;https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.scatter.html&gt;`_ function for detail.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_env_plot</span><span class="o">.</span><span class="n">draw_points</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">refresh</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EnvBase.draw_box">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.draw_box">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw_box</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">vertex</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">refresh</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;-b&quot;</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Draw a box by the vertices.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            vertex (np.ndarray): matrix of vertices, point_dim*vertex_num</span>
+<span class="sd">            refresh (bool): whether to refresh the plot, default True</span>
+<span class="sd">            color (str): color of the box, default &#39;-b&#39;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_env_plot</span><span class="o">.</span><span class="n">draw_box</span><span class="p">(</span><span class="n">vertex</span><span class="p">,</span> <span class="n">refresh</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EnvBase.draw_quiver">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.draw_quiver">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw_quiver</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">point</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">refresh</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Draw a single quiver (arrow) on the environment figure.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            point: Point data for the quiver</span>
+<span class="sd">            refresh (bool): Flag to refresh the quiver in the figure, default False</span>
+<span class="sd">            **kwargs: Additional keyword arguments for drawing the quiver</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_env_plot</span><span class="o">.</span><span class="n">draw_quiver</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">refresh</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EnvBase.draw_quivers">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.draw_quivers">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw_quivers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">points</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">refresh</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Draw multiple quivers (arrows) on the environment figure.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            points: Points data for the quivers</span>
+<span class="sd">            refresh (bool): Flag to refresh the quivers in the figure, default False</span>
+<span class="sd">            **kwargs: Additional keyword arguments for drawing the quivers</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_env_plot</span><span class="o">.</span><span class="n">draw_quivers</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">refresh</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EnvBase.end">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.end">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ending_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">3.0</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        End the simulation, save the animation, and close the environment.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ending_time (float): Time in seconds to wait before closing the figure, default is 3 seconds.</span>
+<span class="sd">            **kwargs: Additional keyword arguments for saving the animation, see :py:meth:`.EnvPlot.save_animate` for detail.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">disable_all_plot</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_ani</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_env_plot</span><span class="o">.</span><span class="n">save_animate</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">display</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="n">ending_time</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Figure will be closed within </span><span class="si">{</span><span class="n">ending_time</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> seconds.&quot;</span><span class="p">)</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s2">&quot;all&quot;</span><span class="p">)</span>
+        <span class="n">env_param</span><span class="o">.</span><span class="n">objects</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">ObjectBase</span><span class="o">.</span><span class="n">reset_id_iter</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">world_param</span><span class="o">.</span><span class="n">control_mode</span> <span class="o">==</span> <span class="s2">&quot;keyboard&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">keyboard</span><span class="o">.</span><span class="n">listener</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;The simulated environment has ended. Total simulation time: </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_world</span><span class="o">.</span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2"> seconds.&quot;</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EnvBase.done">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.done">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">done</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;all&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if the simulation should terminate based on robot completion status.</span>
+
+<span class="sd">        This method evaluates whether robots in the environment have reached their</span>
+<span class="sd">        goals or completed their tasks, using different criteria based on the mode.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            mode (str): Termination condition mode. Options are:</span>
+
+<span class="sd">                - &quot;all&quot;: Simulation is done when ALL robots have completed their tasks</span>
+<span class="sd">                - &quot;any&quot;: Simulation is done when ANY robot has completed its task</span>
+
+<span class="sd">                Default is &quot;all&quot;.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool: True if the termination condition is met based on the specified mode,</span>
+<span class="sd">            False otherwise. Returns False if no robots are present in the environment.</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; # Check if all robots have reached their goals</span>
+<span class="sd">            &gt;&gt;&gt; if env.done(mode=&quot;all&quot;):</span>
+<span class="sd">            ...     print(&quot;All robots completed!&quot;)</span>
+<span class="sd">            &gt;&gt;&gt;</span>
+<span class="sd">            &gt;&gt;&gt; # Check if any robot has completed</span>
+<span class="sd">            &gt;&gt;&gt; if env.done(mode=&quot;any&quot;):</span>
+<span class="sd">            ...     print(&quot;At least one robot completed!&quot;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">done_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">obj</span><span class="o">.</span><span class="n">done</span><span class="p">()</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span> <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">role</span> <span class="o">==</span> <span class="s2">&quot;robot&quot;</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">done_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;all&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">all</span><span class="p">(</span><span class="n">done_list</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;any&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">any</span><span class="p">(</span><span class="n">done_list</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="EnvBase.step_status">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.step_status">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">step_status</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update and log the current status of all robots in the environment.</span>
+
+<span class="sd">        This method checks the arrival status of all robots and logs information</span>
+<span class="sd">        about which robots have reached their goals. It&#39;s automatically called</span>
+<span class="sd">        during each simulation step.</span>
+
+<span class="sd">        Note:</span>
+<span class="sd">            This is an internal method primarily used for status tracking and logging.</span>
+<span class="sd">            The status information is automatically updated during simulation steps.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">arrive_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">obj</span><span class="o">.</span><span class="n">arrive</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span> <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">role</span> <span class="o">==</span> <span class="s2">&quot;robot&quot;</span><span class="p">]</span>
+        <span class="n">collision_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">obj</span><span class="o">.</span><span class="n">collision</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span> <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">role</span> <span class="o">==</span> <span class="s2">&quot;robot&quot;</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arrive_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">arrive_list</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">collision_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">collision_list</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">arrive_list</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_world</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;Arrived&quot;</span>
+        <span class="k">elif</span> <span class="nb">any</span><span class="p">(</span><span class="n">collision_list</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_world</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;Collision&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_world</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;Running&quot;</span></div>
+
+
+<div class="viewcode-block" id="EnvBase.pause">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.pause">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">pause</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Pause the simulation execution.</span>
+
+<span class="sd">        When paused, calls to :py:meth:`step` will return immediately without</span>
+<span class="sd">        performing any simulation updates. The environment status is set to &quot;Pause&quot;.</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; env.pause()</span>
+<span class="sd">            &gt;&gt;&gt; env.step([1.0, 0.0])  # This will have no effect while paused</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_world</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;Pause&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pause_flag</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+
+<div class="viewcode-block" id="EnvBase.resume">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.resume">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">resume</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Resume the simulation execution after being paused.</span>
+
+<span class="sd">        Re-enables simulation updates and sets the environment status back to &quot;Running&quot;.</span>
+<span class="sd">        Subsequent calls to :py:meth:`step` will function normally.</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; env.pause()</span>
+<span class="sd">            &gt;&gt;&gt; # ... some time later ...</span>
+<span class="sd">            &gt;&gt;&gt; env.resume()</span>
+<span class="sd">            &gt;&gt;&gt; env.step([1.0, 0.0])  # This will now work again</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_world</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;Running&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pause_flag</span> <span class="o">=</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="EnvBase.reset">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.reset">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Reset the environment to its initial state.</span>
+
+<span class="sd">        This method resets all objects, robots, obstacles, and the world to their</span>
+<span class="sd">        initial configurations. It also resets the visualization and sets the</span>
+<span class="sd">        environment status to &quot;Reset&quot;.</span>
+
+<span class="sd">        The reset process includes:</span>
+<span class="sd">        - Resetting all objects to their initial positions and states</span>
+<span class="sd">        - Clearing accumulated trajectories and sensor data</span>
+<span class="sd">        - Resetting the world timer and status</span>
+<span class="sd">        - Refreshing the visualization plot</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; # Reset environment after simulation</span>
+<span class="sd">            &gt;&gt;&gt; env.reset()</span>
+<span class="sd">            &gt;&gt;&gt; # Environment is now ready for a new simulation run</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_reset_all</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_world</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reset_plot</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_world</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;Reset&quot;</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_reset_all</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="p">[</span><span class="n">obj</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">]</span>
+
+<div class="viewcode-block" id="EnvBase.reset_plot">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.reset_plot">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">reset_plot</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Reset the environment figure.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_env_plot</span><span class="o">.</span><span class="n">clear_components</span><span class="p">(</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_env_plot</span><span class="o">.</span><span class="n">init_plot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_world</span><span class="o">.</span><span class="n">grid_map</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">)</span></div>
+
+
+    <span class="c1"># region: environment change</span>
+<div class="viewcode-block" id="EnvBase.random_obstacle_position">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.random_obstacle_position">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">random_obstacle_position</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">range_low</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">range_high</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">ids</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">non_overlapping</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Random obstacle positions in the environment.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            range_low (list [x, y, theta]): Lower bound of the random range for the obstacle states. Default is [0, 0, -3.14].</span>
+<span class="sd">            range_high (list [x, y, theta]): Upper bound of the random range for the obstacle states. Default is [10, 10, 3.14].</span>
+<span class="sd">            ids (list): A list of IDs of objects for which to set random positions. Default is None.</span>
+<span class="sd">            non_overlapping (bool): If set, the obstacles that will be reset to random obstacles will not overlap with other obstacles. Default is False.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">range_high</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">range_high</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">range_low</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">range_low</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.14</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">ids</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">obs</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">obs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">obstacle_list</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">range_low</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">range_low</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">range_low</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">range_high</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">range_high</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">range_high</span><span class="p">]</span>
+
+        <span class="n">selected_obs</span> <span class="o">=</span> <span class="p">[</span><span class="n">obs</span> <span class="k">for</span> <span class="n">obs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">obstacle_list</span> <span class="k">if</span> <span class="n">obs</span><span class="o">.</span><span class="n">id</span> <span class="ow">in</span> <span class="n">ids</span><span class="p">]</span>
+        <span class="n">existing_obj</span> <span class="o">=</span> <span class="p">[</span><span class="n">obj</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span> <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ids</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">selected_obs</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">non_overlapping</span><span class="p">:</span>
+                <span class="n">obj</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">range_low</span><span class="p">,</span> <span class="n">range_high</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span> <span class="n">init</span><span class="o">=</span><span class="kc">True</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+
+                <span class="k">while</span> <span class="n">counter</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+                    <span class="n">obj</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span>
+                        <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">range_low</span><span class="p">,</span> <span class="n">range_high</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span> <span class="n">init</span><span class="o">=</span><span class="kc">True</span>
+                    <span class="p">)</span>
+
+                    <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">check_collision</span><span class="p">(</span><span class="n">exi_obj</span><span class="p">)</span> <span class="k">for</span> <span class="n">exi_obj</span> <span class="ow">in</span> <span class="n">existing_obj</span><span class="p">):</span>
+                        <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">existing_obj</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+                        <span class="k">break</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_env_plot</span><span class="o">.</span><span class="n">clear_components</span><span class="p">(</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">obstacle_list</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_env_plot</span><span class="o">.</span><span class="n">draw_components</span><span class="p">(</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">obstacle_list</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EnvBase.random_polygon_shape">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.random_polygon_shape">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">random_polygon_shape</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">center_range</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">avg_radius_range</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">irregularity_range</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">spikeyness_range</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">num_vertices_range</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Random polygon shapes for the obstacles in the environment.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            center_range (list): Range of the center of the polygon. Default is [0, 0, 10, 10].</span>
+<span class="sd">            avg_radius_range (list): Range of the average radius of the polygon. Default is [0.1, 1].</span>
+<span class="sd">            irregularity_range (list): Range of the irregularity of the polygon. Default is [0, 1].</span>
+<span class="sd">            spikeyness_range (list): Range of the spikeyness of the polygon. Default is [0, 1].</span>
+<span class="sd">            num_vertices_range (list): Range of the number of vertices of the polygon. Default is [4, 10].</span>
+
+<span class="sd">            center (Tuple[float, float]):</span>
+<span class="sd">                a pair representing the center of the circumference used</span>
+<span class="sd">                to generate the polygon.</span>
+<span class="sd">            avg_radius (float):</span>
+<span class="sd">                the average radius (distance of each generated vertex to</span>
+<span class="sd">                the center of the circumference) used to generate points</span>
+<span class="sd">                with a normal distribution.</span>
+<span class="sd">            irregularity (float): 0 - 1</span>
+<span class="sd">                variance of the spacing of the angles between consecutive</span>
+<span class="sd">                vertices.</span>
+<span class="sd">            spikeyness (float): 0 - 1</span>
+<span class="sd">                variance of the distance of each vertex to the center of</span>
+<span class="sd">                the circumference.</span>
+<span class="sd">            num_vertices (int):</span>
+<span class="sd">                the number of vertices of the polygon.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">num_vertices_range</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">num_vertices_range</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">spikeyness_range</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">spikeyness_range</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">irregularity_range</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">irregularity_range</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">avg_radius_range</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">avg_radius_range</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">center_range</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">center_range</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+        <span class="n">vertices_list</span> <span class="o">=</span> <span class="n">random_generate_polygon</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">obstacle_number</span><span class="p">,</span>
+            <span class="n">center_range</span><span class="p">,</span>
+            <span class="n">avg_radius_range</span><span class="p">,</span>
+            <span class="n">irregularity_range</span><span class="p">,</span>
+            <span class="n">spikeyness_range</span><span class="p">,</span>
+            <span class="n">num_vertices_range</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">obj</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">obstacle_list</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="s2">&quot;polygon&quot;</span><span class="p">:</span>
+                <span class="n">geom</span> <span class="o">=</span> <span class="n">Polygon</span><span class="p">(</span><span class="n">vertices_list</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+                <span class="n">obj</span><span class="o">.</span><span class="n">set_original_geometry</span><span class="p">(</span><span class="n">geom</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_env_plot</span><span class="o">.</span><span class="n">clear_components</span><span class="p">(</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">obstacle_list</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_env_plot</span><span class="o">.</span><span class="n">draw_components</span><span class="p">(</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">obstacle_list</span><span class="p">)</span></div>
+
+
+    <span class="c1"># endregion: environment change</span>
+
+    <span class="c1"># region: object operation</span>
+
+<div class="viewcode-block" id="EnvBase.create_obstacle">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.create_obstacle">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">create_obstacle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create an obstacle in the environment.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            **kwargs: Additional parameters for obstacle creation.</span>
+<span class="sd">                see ObjectFactory.create_obstacle for detail</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Obstacle: An instance of an obstacle.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">object_factory</span><span class="o">.</span><span class="n">create_obstacle</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EnvBase.add_object">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.add_object">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_object</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">ObjectBase</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add the object to the environment.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            obj (ObjectBase): The object to be added to the environment.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_objects</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">build_tree</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="EnvBase.add_objects">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.add_objects">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_objects</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">objs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">ObjectBase</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add the objects to the environment.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            objs (list): List of objects to be added to the environment.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_objects</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">objs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">build_tree</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="EnvBase.delete_object">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.delete_object">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">delete_object</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Delete the object with the given id.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            target_id (int): ID of the object to be deleted.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_objects</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="n">target_id</span><span class="p">:</span>
+                <span class="n">obj</span><span class="o">.</span><span class="n">plot_clear</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_objects</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+                <span class="k">break</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">build_tree</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="EnvBase.delete_objects">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.delete_objects">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">delete_objects</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target_ids</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Delete the objects with the given ids.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            target_ids (list): List of IDs of objects to be deleted.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">del_obj</span> <span class="o">=</span> <span class="p">[</span><span class="n">obj</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_objects</span> <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">id</span> <span class="ow">in</span> <span class="n">target_ids</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">del_obj</span><span class="p">:</span>
+            <span class="n">obj</span><span class="o">.</span><span class="n">plot_clear</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_objects</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">build_tree</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="EnvBase.build_tree">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.build_tree">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">build_tree</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Build the geometry tree for the objects in the environment to detect the possible collision objects.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">env_param</span><span class="o">.</span><span class="n">GeometryTree</span> <span class="o">=</span> <span class="n">STRtree</span><span class="p">([</span><span class="n">obj</span><span class="o">.</span><span class="n">geometry</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span><span class="p">])</span></div>
+
+
+    <span class="c1"># endregion: object operation</span>
+
+    <span class="c1"># region: get information</span>
+
+<div class="viewcode-block" id="EnvBase.get_robot_state">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.get_robot_state">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_robot_state</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the current state of the robot.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            state: 3*1 vector [x, y, theta]</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">_state</span></div>
+
+
+<div class="viewcode-block" id="EnvBase.get_lidar_scan">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.get_lidar_scan">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_lidar_scan</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the lidar scan of the robot with the given id.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            id (int): Id of the robot.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Dict: Dict of lidar scan points, see :py:meth:`.world.sensors.lidar2d.Lidar2D.get_scan` for detail.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot_list</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">.</span><span class="n">get_lidar_scan</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="EnvBase.get_lidar_offset">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.get_lidar_offset">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_lidar_offset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the lidar offset of the robot with the given id.</span>
+
+
+<span class="sd">        Args:</span>
+<span class="sd">            id (int): Id of the robot.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list of float: Lidar offset of the robot, [x, y, theta]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot_list</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">.</span><span class="n">get_lidar_offset</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="EnvBase.get_obstacle_info_list">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.get_obstacle_info_list">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_obstacle_info_list</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the information of the obstacles in the environment.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list of dict: List of obstacle information, see :py:meth:`.ObjectBase.get_obstacle_info` for detail.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="p">[</span><span class="n">obj</span><span class="o">.</span><span class="n">get_obstacle_info</span><span class="p">()</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">obstacle_list</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="EnvBase.get_robot_info">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.get_robot_info">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_robot_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the information of the robot with the given id.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            id (int): Id of the robot.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            see :py:meth:`.ObjectBase.get_info` for detail</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot_list</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">.</span><span class="n">get_info</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="EnvBase.get_robot_info_list">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.get_robot_info_list">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_robot_info_list</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the information of the robots in the environment.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list of dict: List of robot information, see :py:meth:`.ObjectBase.get_info` for detail.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="p">[</span><span class="n">obj</span><span class="o">.</span><span class="n">get_info</span><span class="p">()</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot_list</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="EnvBase.get_map">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.get_map">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resolution</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the map of the environment with the given resolution.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            resolution (float): Resolution of the map. Default is 0.1.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            The map of the environment with the specified resolution.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_world</span><span class="o">.</span><span class="n">get_map</span><span class="p">(</span><span class="n">resolution</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">obstacle_list</span><span class="p">)</span></div>
+
+
+    <span class="c1"># endregion: get information</span>
+
+<div class="viewcode-block" id="EnvBase.set_title">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.set_title">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_title</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the title of the plot.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_env_plot</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span></div>
+
+
+<div class="viewcode-block" id="EnvBase.save_figure">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.save_figure">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">save_figure</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">save_name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">include_index</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">save_gif</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Save the current figure.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            save_name (str): Name of the file with format to save the figure. Default is None.</span>
+<span class="sd">            include_index (bool): Flag to include index in the saved file name. Default is False.</span>
+<span class="sd">            save_gif (bool): Flag to save as GIF format. Default is False.</span>
+<span class="sd">            **kwargs: Additional keyword arguments for saving the figure, see `savefig &lt;https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.savefig.html&gt;`_ function for detail.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">file_save_name</span> <span class="o">=</span> <span class="n">save_name</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_world</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;.png&quot;</span>
+
+        <span class="n">file_name</span><span class="p">,</span> <span class="n">file_format</span> <span class="o">=</span> <span class="n">file_save_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_env_plot</span><span class="o">.</span><span class="n">save_figure</span><span class="p">(</span>
+            <span class="n">file_name</span><span class="p">,</span> <span class="n">file_format</span><span class="p">,</span> <span class="n">include_index</span><span class="p">,</span> <span class="n">save_gif</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EnvBase.load_behavior">
+<a class="viewcode-back" href="../../../api/irsim/index.html#irsim.env.env_base.EnvBase.load_behavior">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">load_behavior</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">behaviors</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;behavior_methods&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load behavior parameters from the script. Please refer to the behavior_methods.py file for more details.</span>
+<span class="sd">        Please make sure the python file is placed in the same folder with the implemented script.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            behaviors (str): name of the bevavior script.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">behaviors</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to load module &#39;</span><span class="si">{</span><span class="n">behaviors</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+    <span class="c1"># region: property</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">robot_list</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">ObjectBase</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the list of robots in the environment.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list: List of robot objects [].</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="p">[</span><span class="n">obj</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span> <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">role</span> <span class="o">==</span> <span class="s2">&quot;robot&quot;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">obstacle_list</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">ObjectBase</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the list of obstacles in the environment.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list: List of obstacle objects.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">obj</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span> <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">role</span> <span class="o">==</span> <span class="s2">&quot;obstacle&quot;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">objects</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">ObjectBase</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get all objects in the environment.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list: List of all objects in the environment.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_objects</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">static_objects</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">ObjectBase</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get all static objects in the environment.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list: List of static objects in the environment.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">obj</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span> <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">static</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">dynamic_objects</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">ObjectBase</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get all dynamic objects in the environment.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list: List of dynamic objects in the environment.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">obj</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">objects</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">obj</span><span class="o">.</span><span class="n">static</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">step_time</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the step time of the simulation.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: Step time of the simulation from the world.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_world</span><span class="o">.</span><span class="n">step_time</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">time</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the time of the simulation.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_world</span><span class="o">.</span><span class="n">time</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">status</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the status of the environment.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_world</span><span class="o">.</span><span class="n">status</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">robot</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ObjectBase</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the first robot in the environment.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Robot: The first robot object in the robot list.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">obstacle_number</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the number of obstacles in the environment.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            int: Number of obstacles in the environment.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">obstacle_list</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">robot_number</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the number of robots in the environment.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            int: Number of robots in the environment.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">robot_list</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">logger</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">EnvLogger</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the environment logger.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            EnvLogger: The logger instance for the environment.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">env_param</span><span class="o">.</span><span class="n">logger</span>  <span class="c1"># type: ignore[return-value]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">key_vel</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get current keyboard velocity command.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Any: A 2x1 vector ``[[linear], [angular]]`` from keyboard input.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">keyboard</span><span class="o">.</span><span class="n">key_vel</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">key_id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get current keyboard-controlled robot id.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            int: The robot id currently controlled by keyboard.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">keyboard</span><span class="o">.</span><span class="n">key_id</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">mouse_pos</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get current mouse position on the canvas.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Any: Mouse coordinates ``(x, y)`` or ``None`` if outside axes.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mouse</span><span class="o">.</span><span class="n">mouse_pos</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">mouse_left_pos</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get last left-click position.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Any: Position array or ``None`` if not set.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mouse</span><span class="o">.</span><span class="n">left_click_pos</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">mouse_right_pos</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get last right-click position.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Any: Position array or ``None`` if not set.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mouse</span><span class="o">.</span><span class="n">right_click_pos</span></div>
+
+
+    <span class="c1"># endregion: property</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Ruihua Han.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
