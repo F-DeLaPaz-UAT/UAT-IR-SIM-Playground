@@ -1,0 +1,4 @@
+Double Click on StepOne.bat to run
+In Powershell Terminal type ./StepTwo.bat
+
+Enjoy
