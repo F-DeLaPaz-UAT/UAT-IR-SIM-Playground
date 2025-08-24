@@ -1,0 +1,849 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Configure robots and obstacles &#8212; IR-SIM 2.7.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../_static/my_theme.css?v=20c2511c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=dfec817d"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/tabs.js?v=3ee01567"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'usage/configure_robots_obstacles';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://raw.githubusercontent.com/hanruihua/ir-sim/main/docs/source/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '2.7.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <script defer="defer" src="../_static/custom-icons.js?v=5b19a0d0"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Configure Sensors for the robot" href="configure_sensor.html" />
+    <link rel="prev" title="Make Environment" href="make_environment.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">IR-SIM 2.7.0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../get_started/index.html">
+    Get Started
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../yaml_config/index.html">
+    YAML Configuration Syntax
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/hanruihua/ir-sim" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/ir-sim/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-custom fa-pypi fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../get_started/index.html">
+    Get Started
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../yaml_config/index.html">
+    YAML Configuration Syntax
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/hanruihua/ir-sim" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/ir-sim/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-custom fa-pypi fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="make_environment.html">Make Environment</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Configure robots and obstacles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configure_sensor.html">Configure Sensors for the robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configure_behavior.html">Configure behavior for objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configure_grid_map.html">Configure grid map environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configure_keyboard_Mouse_control.html">Configure keyboard/Mouse control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configure_dynamic_random_env.html">Configure dynamic random environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_animation.html">Render and Save Animation</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">User Guide</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Configure robots and obstacles</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="configure-robots-and-obstacles">
+<h1>Configure robots and obstacles<a class="headerlink" href="#configure-robots-and-obstacles" title="Link to this heading">#</a></h1>
+<p>To effectively simulate robots within your environment, you need to define and configure various robot parameters.</p>
+<section id="robot-configuration-parameters">
+<h2>Robot Configuration Parameters<a class="headerlink" href="#robot-configuration-parameters" title="Link to this heading">#</a></h2>
+<p>Each robot in the simulation is defined by a set of parameters in a YAML configuration file. Below is a simple example of a robot configuration:</p>
+<p>The python script and YAML configuration file:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Python Script</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">irsim</span>
+
+<span class="n">env</span> <span class="o">=</span> <span class="n">irsim</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;robot_world.yaml&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+
+    <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+    <span class="n">env</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">env</span><span class="o">.</span><span class="n">done</span><span class="p">():</span>
+        <span class="k">break</span>
+
+<span class="n">env</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+YAML Configuration</label><div class="sd-tab-content docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">world</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">height</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w"> </span>
+<span class="w">  </span><span class="nt">width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w">   </span>
+
+<span class="nt">robot</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">kinematics</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;diff&#39;</span><span class="p p-Indicator">}</span><span class="w">  </span>
+<span class="w">  </span><span class="nt">shape</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;circle&#39;</span><span class="p p-Indicator">,</span><span class="nt"> radius</span><span class="p">:</span><span class="w"> </span><span class="nv">0.2</span><span class="p p-Indicator">}</span><span class="w">  </span>
+<span class="w">  </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span><span class="w">  </span>
+<span class="w">  </span><span class="nt">goal</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">9</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">9</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span><span class="w"> </span>
+<span class="w">  </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;g&#39;</span>
+<span class="w">  </span><span class="nt">plot</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">show_trajectory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">    </span><span class="nt">show_goal</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="important-parameters-explained">
+<h3>Important Parameters Explained<a class="headerlink" href="#important-parameters-explained" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">kinematics</span></code>:</strong> Defines the movement model of the robot. Name options include <code class="docutils literal notranslate"><span class="pre">'omni'</span></code>, <code class="docutils literal notranslate"><span class="pre">'diff'</span></code>, and <code class="docutils literal notranslate"><span class="pre">'acker'</span></code>.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">'omni'</span></code>: Omnidirectional wheels allowing movement in all directions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'diff'</span></code>: Differential drive allowing movement forward/backward and rotation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'acker'</span></code>: Ackermann steering, typical for car-like robots.</p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">shape</span></code>:</strong> Specifies the physical shape and size of the robot. Name options include <code class="docutils literal notranslate"><span class="pre">'circle'</span></code>, <code class="docutils literal notranslate"><span class="pre">'rectangle'</span></code>, <code class="docutils literal notranslate"><span class="pre">'polygon'</span></code>, and <code class="docutils literal notranslate"><span class="pre">linestring</span></code>.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">circle</span></code>: A circular robot with a specified radius.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rectangle</span></code>: A rectangular robot with specified length and width.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">polygon</span></code>: A polygonal robot.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">linestring</span></code>: list of lines.</p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">state</span></code>:</strong> Defines the initial position and orientation of the robot in the environment.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">goal</span></code>:</strong> Specifies the target position and orientation for the robot.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">plot</span></code></strong> (optional): Specifies the visualization settings for the robot. See <a class="reference internal" href="../api/irsim/world/object_base/index.html#irsim.world.object_base.ObjectBase.plot" title="irsim.world.object_base.ObjectBase.plot"><span class="xref myst py py-meth">object.plot</span></a> for more details.</p></li>
+</ul>
+<p>The robot has a default behavior of moving from its initial position to the goal position directly (<code class="docutils literal notranslate"><span class="pre">dash</span></code>) if the <code class="docutils literal notranslate"><span class="pre">kinematics</span></code> is set.</p>
+</section>
+<section id="explanation">
+<h3>Explanation<a class="headerlink" href="#explanation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">env.step()</span></code>:</strong> Advances the simulation by one time step. You can input your control commands here by <code class="docutils literal notranslate"><span class="pre">env.step(velocity)</span></code> to run your own control algorithm. <code class="docutils literal notranslate"><span class="pre">velocity</span></code> is associated with the <code class="docutils literal notranslate"><span class="pre">kinematics</span></code> of the robot. See <a class="reference internal" href="../api/irsim/env/env_base/index.html#irsim.env.env_base.EnvBase.step" title="irsim.env.env_base.EnvBase.step"><span class="xref myst py py-meth">env.step</span></a> for more details.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">env.render(0.05)</span></code>:</strong> Renders the current state of the environment with a 0.05-second delay between frames. See <a class="reference internal" href="../api/irsim/env/env_base/index.html#irsim.env.env_base.EnvBase.render" title="irsim.env.env_base.EnvBase.render"><span class="xref myst py py-meth">env.render</span></a> for more details.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">env.done()</span></code>:</strong> Checks whether the simulation conditions to terminate have been met. Such as reaching the goal or a collision. See <a class="reference internal" href="../api/irsim/env/env_base/index.html#irsim.env.env_base.EnvBase.done" title="irsim.env.env_base.EnvBase.done"><span class="xref myst py py-meth">env.done</span></a> for more details.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">env.end()</span></code>:</strong> Ensures that the simulation is terminated gracefully, releasing any resources or handles. Provides a clean exit. See <a class="reference internal" href="../api/irsim/env/env_base/index.html#irsim.env.env_base.EnvBase.end" title="irsim.env.env_base.EnvBase.end"><span class="xref myst py py-meth">env.end</span></a> for more details.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <a class="reference external" href="https://github.com/hanruihua/RDA-planner">rda_planner</a> is a case of using the <code class="docutils literal notranslate"><span class="pre">env.step(velocity)</span></code> to run your own control algorithm.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can add Gaussian noise on the kinematics of the robot and obstacle by setting the <code class="docutils literal notranslate"><span class="pre">noise</span></code> to be True in parameter in the <code class="docutils literal notranslate"><span class="pre">kinematics</span></code> dictionary. See <a class="reference internal" href="../yaml_config/configuration.html"><span class="doc std std-doc">kinematics</span></a> for more details.</p>
+</div>
+</section>
+</section>
+<section id="obstacle-configuration-parameters">
+<h2>Obstacle Configuration Parameters<a class="headerlink" href="#obstacle-configuration-parameters" title="Link to this heading">#</a></h2>
+<p>The parameters of obstacles in the simulation are similar to those of robots. Below is an example of adding various obstacles to the yaml configuration file, and run the same python script as above.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Python Script</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">irsim</span>
+
+<span class="n">env</span> <span class="o">=</span> <span class="n">irsim</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;robot_world.yaml&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+
+    <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+    <span class="n">env</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">env</span><span class="o">.</span><span class="n">done</span><span class="p">():</span>
+        <span class="k">break</span>
+
+<span class="n">env</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+YAML Configuration</label><div class="sd-tab-content docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">world</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">height</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w"> </span>
+<span class="w">  </span><span class="nt">width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w">   </span>
+
+<span class="nt">robot</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">kinematics</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;diff&#39;</span><span class="p p-Indicator">}</span><span class="w">  </span>
+<span class="w">  </span><span class="nt">shape</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;circle&#39;</span><span class="p p-Indicator">,</span><span class="nt"> radius</span><span class="p">:</span><span class="w"> </span><span class="nv">0.2</span><span class="p p-Indicator">}</span><span class="w">  </span>
+<span class="w">  </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span><span class="w">  </span>
+<span class="w">  </span><span class="nt">goal</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">9</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">9</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span><span class="w"> </span>
+<span class="w">  </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;g&#39;</span>
+<span class="w">  </span><span class="nt">plot</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">show_trajectory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">    </span><span class="nt">show_goal</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+
+<span class="nt">obstacle</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">shape</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;circle&#39;</span><span class="p p-Indicator">,</span><span class="nt"> radius</span><span class="p">:</span><span class="w"> </span><span class="nv">1.0</span><span class="p p-Indicator">}</span><span class="w">  </span><span class="c1"># radius</span>
+<span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span><span class="w">  </span>
+<span class="w">  </span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">shape</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;rectangle&#39;</span><span class="p p-Indicator">,</span><span class="nt"> length</span><span class="p">:</span><span class="w"> </span><span class="nv">1.5</span><span class="p p-Indicator">,</span><span class="nt"> width</span><span class="p">:</span><span class="w"> </span><span class="nv">1.2</span><span class="p p-Indicator">}</span><span class="w">  </span><span class="c1"># length, width</span>
+<span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">6</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]</span><span class="w"> </span>
+
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">shape</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;linestring&#39;</span><span class="p p-Indicator">,</span><span class="nt"> vertices</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="nv">5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">5</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">4</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">6</span><span class="p p-Indicator">]]</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w">  </span><span class="c1"># vertices</span>
+<span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">unobstructed</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">shape</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;polygon&#39;</span>
+<span class="w">      </span><span class="nt">vertices</span><span class="p">:</span><span class="w"> </span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">4.5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">4.5</span><span class="p p-Indicator">]</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">5.5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">4.5</span><span class="p p-Indicator">]</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">5.5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">5.5</span><span class="p p-Indicator">]</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">4.5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">5.5</span><span class="p p-Indicator">]</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+Demonstration</label><div class="sd-tab-content docutils">
+<a class="reference internal image-reference" href="../_images/robot_obstacle.gif"><img alt="Select Parameters" class="align-center" src="../_images/robot_obstacle.gif" style="width: 400px;" />
+</a>
+</div>
+</div>
+<section id="id1">
+<h3>Important Parameters Explained<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>unobstructed</strong>: If <code class="docutils literal notranslate"><span class="pre">True</span></code>, there is no collision detection with the object.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>The main difference between the robot and obstacle configurations is the default values. For example, default color of the obstacles is black.</p></li>
+<li><p>Because the <code class="docutils literal notranslate"><span class="pre">kinematics</span></code> of the obstacle is not defined, the obstacle will be stationary during the simulation.</p></li>
+<li><p>Start with <code class="docutils literal notranslate"><span class="pre">-</span></code> to define a new obstacle.</p></li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please make sure that the obstacles are not placed in the initial position of the robot. Otherwise, the robot will collide with the obstacles at the beginning of the simulation.</p>
+</div>
+</section>
+</section>
+<section id="advanced-configurations-for-multiple-robots-and-obstacles">
+<h2>Advanced Configurations for Multiple Robots and Obstacles<a class="headerlink" href="#advanced-configurations-for-multiple-robots-and-obstacles" title="Link to this heading">#</a></h2>
+<p>To simulate multiple robots and obstacles within the same environment, simply add the <code class="docutils literal notranslate"><span class="pre">number</span></code> and <code class="docutils literal notranslate"><span class="pre">distribution</span></code> of robots and obstacles to the configuration file. Below is an example of a configuration file with multiple robots and obstacles:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+Python Script</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">irsim</span>
+
+<span class="n">env</span> <span class="o">=</span> <span class="n">irsim</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;robot_world.yaml&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+
+    <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+    <span class="n">env</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">env</span><span class="o">.</span><span class="n">done</span><span class="p">():</span>
+        <span class="k">break</span>
+
+<span class="n">env</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
+YAML Configuration</label><div class="sd-tab-content docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">world</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">height</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w">  </span><span class="c1"># the height of the world</span>
+<span class="w">  </span><span class="nt">width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w">   </span><span class="c1"># the width of the world</span>
+
+<span class="nt">robot</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">    </span><span class="nt">distribution</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;manual&#39;</span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="nt">kinematics</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;diff&#39;</span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="nt">shape</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;circle&#39;</span><span class="p p-Indicator">,</span><span class="nt"> radius</span><span class="p">:</span><span class="w"> </span><span class="nv">0.2</span><span class="p p-Indicator">}</span><span class="w">  </span><span class="c1"># radius</span>
+<span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span><span class="w">  </span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">goal</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">9</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">9</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span><span class="w"> </span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">9</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;royalblue&#39;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;red&#39;</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
+<span class="w">    </span><span class="nt">distribution</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;random&#39;</span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="nt">kinematics</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;diff&#39;</span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="nt">shape</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;circle&#39;</span><span class="p p-Indicator">,</span><span class="nt"> radius</span><span class="p">:</span><span class="w"> </span><span class="nv">0.2</span><span class="p p-Indicator">}</span><span class="w">  </span><span class="c1"># radius</span>
+<span class="w">    </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;pink&#39;</span>
+
+
+<span class="nt">obstacle</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
+<span class="w">    </span><span class="nt">distribution</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;manual&#39;</span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="nv">4</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">8</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">]]</span>
+<span class="w">    </span><span class="nt">shape</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;circle&#39;</span><span class="p p-Indicator">,</span><span class="nt"> radius</span><span class="p">:</span><span class="w"> </span><span class="nv">0.2</span><span class="p p-Indicator">}</span><span class="w">  </span><span class="c1"># radius</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;circle&#39;</span><span class="p p-Indicator">,</span><span class="nt"> radius</span><span class="p">:</span><span class="w"> </span><span class="nv">0.1</span><span class="p p-Indicator">}</span><span class="w">  </span><span class="c1"># radius</span>
+<span class="w">    </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;k&#39;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">distribution</span></code> parameter specifies how the robots and obstacles are distributed within the environment. Options include <code class="docutils literal notranslate"><span class="pre">'manual'</span></code> and <code class="docutils literal notranslate"><span class="pre">'random'</span></code>. Details are provided in the <a class="reference internal" href="../yaml_config/configuration.html"><span class="doc std std-doc">YAML Configuration</span></a></p></li>
+</ul>
+</div>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
+Demonstration</label><div class="sd-tab-content docutils">
+<a class="reference internal image-reference" href="../_images/multi_objects.gif"><img alt="Select Parameters" class="align-center" src="../_images/multi_objects.gif" style="width: 400px;" />
+</a>
+</div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="make_environment.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Make Environment</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="configure_sensor.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Configure Sensors for the robot</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#robot-configuration-parameters">Robot Configuration Parameters</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#important-parameters-explained">Important Parameters Explained</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explanation">Explanation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obstacle-configuration-parameters">Obstacle Configuration Parameters</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Important Parameters Explained</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-configurations-for-multiple-robots-and-obstacles">Advanced Configurations for Multiple Robots and Obstacles</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/usage/configure_robots_obstacles.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Ruihua Han.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

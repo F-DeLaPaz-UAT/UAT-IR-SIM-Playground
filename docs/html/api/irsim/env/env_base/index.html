@@ -1,0 +1,1621 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>irsim.env.env_base &#8212; IR-SIM 2.7.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/my_theme.css?v=20c2511c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../../_static/documentation_options.js?v=dfec817d"></script>
+    <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../../_static/tabs.js?v=3ee01567"></script>
+    <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/irsim/env/env_base/index';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://raw.githubusercontent.com/hanruihua/ir-sim/main/docs/source/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '2.7.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <script defer="defer" src="../../../../_static/custom-icons.js?v=5b19a0d0"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="irsim.env.env_base3d" href="../env_base3d/index.html" />
+    <link rel="prev" title="irsim.env" href="../index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">IR-SIM 2.7.0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../get_started/index.html">
+    Get Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../usage/index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../yaml_config/index.html">
+    YAML Configuration Syntax
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/hanruihua/ir-sim" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/ir-sim/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-custom fa-pypi fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../get_started/index.html">
+    Get Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../usage/index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../yaml_config/index.html">
+    YAML Configuration Syntax
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/hanruihua/ir-sim" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/ir-sim/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-custom fa-pypi fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">irsim.env.env_base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../env_base3d/index.html">irsim.env.env_base3d</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../env_config/index.html">irsim.env.env_config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../env_logger/index.html">irsim.env.env_logger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../env_plot/index.html">irsim.env.env_plot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../env_plot3d/index.html">irsim.env.env_plot3d</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">API Reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">irsim.env</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">irsim.env.env_base</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-irsim.env.env_base">
+<span id="irsim-env-env-base"></span><h1>irsim.env.env_base<a class="headerlink" href="#module-irsim.env.env_base" title="Link to this heading">#</a></h1>
+<p>Class EnvBase is the base class of the environment. This class will read the yaml file and create the world, robot, obstacle, and map objects.</p>
+<p>Author: Ruihua Han</p>
+<section id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#irsim.env.env_base.keyboard_module" title="irsim.env.env_base.keyboard_module"><code class="xref py py-obj docutils literal notranslate"><span class="pre">keyboard_module</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#irsim.env.env_base.BACKEND_PREFERENCES" title="irsim.env.env_base.BACKEND_PREFERENCES"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BACKEND_PREFERENCES</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#irsim.env.env_base.backends" title="irsim.env.env_base.backends"><code class="xref py py-obj docutils literal notranslate"><span class="pre">backends</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#irsim.env.env_base.backend_set" title="irsim.env.env_base.backend_set"><code class="xref py py-obj docutils literal notranslate"><span class="pre">backend_set</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#irsim.env.env_base.EnvBase" title="irsim.env.env_base.EnvBase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EnvBase</span></code></a></p></td>
+<td><p>The base class for simulation environments in IR-SIM.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">#</a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="irsim.env.env_base.keyboard_module">
+<span class="sig-prename descclassname"><span class="pre">irsim.env.env_base.</span></span><span class="sig-name descname"><span class="pre">keyboard_module</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#irsim.env.env_base.keyboard_module" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="irsim.env.env_base.BACKEND_PREFERENCES">
+<span class="sig-prename descclassname"><span class="pre">irsim.env.env_base.</span></span><span class="sig-name descname"><span class="pre">BACKEND_PREFERENCES</span></span><a class="headerlink" href="#irsim.env.env_base.BACKEND_PREFERENCES" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="irsim.env.env_base.backends">
+<span class="sig-prename descclassname"><span class="pre">irsim.env.env_base.</span></span><span class="sig-name descname"><span class="pre">backends</span></span><a class="headerlink" href="#irsim.env.env_base.backends" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="irsim.env.env_base.backend_set">
+<span class="sig-prename descclassname"><span class="pre">irsim.env.env_base.</span></span><span class="sig-name descname"><span class="pre">backend_set</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#irsim.env.env_base.backend_set" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">irsim.env.env_base.</span></span><span class="sig-name descname"><span class="pre">EnvBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">world_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">display</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disable_all_plot</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_ani</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">full</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'INFO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase" title="Link to this definition">#</a></dt>
+<dd><p>The base class for simulation environments in IR-SIM.</p>
+<p>This class serves as the foundation for creating and managing robotic simulation
+environments. It reads YAML configuration files to create worlds, robots, obstacles,
+and map objects, and provides the core simulation loop functionality.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>world_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Path to the world YAML configuration file.
+If None, the environment will attempt to find a default configuration
+or use a minimal setup.</p></li>
+<li><p><strong>display</strong> (<em>bool</em>) – Whether to display the environment visualization.
+Set to False for headless operation. Default is True.</p></li>
+<li><p><strong>disable_all_plot</strong> (<em>bool</em>) – Whether to disable all plots and figures completely.
+When True, no visualization will be created even if display is True.
+Default is False.</p></li>
+<li><p><strong>save_ani</strong> (<em>bool</em>) – Whether to save the simulation as an animation file.
+Useful for creating videos of simulation runs. Default is False.</p></li>
+<li><p><strong>full</strong> (<em>bool</em>) – Whether to display the visualization in full screen mode.
+Only effective on supported platforms. Default is False.</p></li>
+<li><p><strong>log_file</strong> (<em>str</em><em>, </em><em>optional</em>) – Path to the log file for saving simulation logs.
+If None, logs will only be output to console.</p></li>
+<li><p><strong>log_level</strong> (<em>str</em>) – Logging level for the environment. Options include
+‘DEBUG’, ‘INFO’, ‘WARNING’, ‘ERROR’, ‘CRITICAL’. Default is ‘INFO’.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.display">
+<span class="sig-name descname"><span class="pre">display</span></span><a class="headerlink" href="#irsim.env.env_base.EnvBase.display" title="Link to this definition">#</a></dt>
+<dd><p>Display flag for the environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.disable_all_plot">
+<span class="sig-name descname"><span class="pre">disable_all_plot</span></span><a class="headerlink" href="#irsim.env.env_base.EnvBase.disable_all_plot" title="Link to this definition">#</a></dt>
+<dd><p>Plot disable flag.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.save_ani">
+<span class="sig-name descname"><span class="pre">save_ani</span></span><a class="headerlink" href="#irsim.env.env_base.EnvBase.save_ani" title="Link to this definition">#</a></dt>
+<dd><p>Animation saving flag.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><a class="headerlink" href="#irsim.env.env_base.EnvBase.objects" title="Link to this definition">#</a></dt>
+<dd><p>List of all objects in the environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.world">
+<span class="sig-name descname"><span class="pre">world</span></span><a class="headerlink" href="#irsim.env.env_base.EnvBase.world" title="Link to this definition">#</a></dt>
+<dd><p>The world object containing environment configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../../world/index.html#irsim.world.World" title="irsim.world.World">World</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.robot_collection">
+<span class="sig-name descname"><span class="pre">robot_collection</span></span><a class="headerlink" href="#irsim.env.env_base.EnvBase.robot_collection" title="Link to this definition">#</a></dt>
+<dd><p>List of robot objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.obstacle_collection">
+<span class="sig-name descname"><span class="pre">obstacle_collection</span></span><a class="headerlink" href="#irsim.env.env_base.EnvBase.obstacle_collection" title="Link to this definition">#</a></dt>
+<dd><p>List of obstacle objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.map_collection">
+<span class="sig-name descname"><span class="pre">map_collection</span></span><a class="headerlink" href="#irsim.env.env_base.EnvBase.map_collection" title="Link to this definition">#</a></dt>
+<dd><p>List of map objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a basic environment</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">env</span> <span class="o">=</span> <span class="n">EnvBase</span><span class="p">(</span><span class="s2">&quot;my_world.yaml&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create headless environment for training</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">env</span> <span class="o">=</span> <span class="n">EnvBase</span><span class="p">(</span><span class="s2">&quot;world.yaml&quot;</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">log_level</span><span class="o">=</span><span class="s2">&quot;WARNING&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create environment with animation saving</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">env</span> <span class="o">=</span> <span class="n">EnvBase</span><span class="p">(</span><span class="s2">&quot;world.yaml&quot;</span><span class="p">,</span> <span class="n">save_ani</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">full</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#id0" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">disable_all_plot</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#id1" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">save_ani</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#id2" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.env_config">
+<span class="sig-name descname"><span class="pre">env_config</span></span><a class="headerlink" href="#irsim.env.env_base.EnvBase.env_config" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.object_factory">
+<span class="sig-name descname"><span class="pre">object_factory</span></span><a class="headerlink" href="#irsim.env.env_base.EnvBase.object_factory" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.mouse">
+<span class="sig-name descname"><span class="pre">mouse</span></span><a class="headerlink" href="#irsim.env.env_base.EnvBase.mouse" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.pause_flag">
+<span class="sig-name descname"><span class="pre">pause_flag</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#irsim.env.env_base.EnvBase.pause_flag" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.step">
+<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.step"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.step" title="Link to this definition">#</a></dt>
+<dd><p>Perform a single simulation step in the environment.</p>
+<p>This method advances the simulation by one time step, applying the given actions
+to the specified robots and updating all objects in the environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>action</strong> (<em>Union</em><em>[</em><em>np.ndarray</em><em>, </em><em>list</em><em>]</em><em>, </em><em>optional</em>) – <p>Action(s) to be performed in the environment.
+Can be a single action or a list of actions. Action format depends on robot type:</p>
+<ul>
+<li><p><strong>Differential robot</strong>: [linear_velocity, angular_velocity]</p></li>
+<li><p><strong>Omnidirectional robot</strong>: [velocity_x, velocity_y]</p></li>
+<li><p><strong>Ackermann robot</strong>: [linear_velocity, steering_angle]</p></li>
+</ul>
+<p>If None, robots will use their default behavior or keyboard control if enabled.</p>
+</p></li>
+<li><p><strong>action_id</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>list</em><em>]</em><em>, </em><em>optional</em>) – ID(s) of the robot(s) to apply the action(s) to.
+Can be a single robot ID or a list of IDs. Default is 0 (first robot).
+If action is a list and action_id is a single int, all actions will be
+applied to robots sequentially starting from action_id.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>If the environment is paused, this method returns without performing any updates.</p></li>
+<li><p>The method automatically handles collision detection, status updates, and plotting.</p></li>
+<li><p>In keyboard control mode, the action parameter is ignored and keyboard input is used.</p></li>
+</ul>
+</div>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Move first robot with differential drive</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">])</span>  <span class="c1"># 1.0 m/s forward, 0.5 rad/s turn</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Move specific robot by ID</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">([</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="n">action_id</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Move robot with ID 2</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Move multiple robots</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">actions</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">actions</span><span class="p">,</span> <span class="n">action_id</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>  <span class="c1"># Move robots 0 and 1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.render">
+<span class="sig-name descname"><span class="pre">render</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figure_kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'dynamic'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.render"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.render" title="Link to this definition">#</a></dt>
+<dd><p>Render the environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>interval</strong> (<em>float</em>) – Time interval between frames in seconds.</p></li>
+<li><p><strong>figure_kwargs</strong> (<em>dict</em>) – Additional keyword arguments for saving figures, see <a class="reference external" href="https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.savefig.html">savefig</a> for detail.</p></li>
+<li><p><strong>mode</strong> (<em>str</em>) – “dynamic”, “static”, “all” to specify which type of objects to draw and clear.</p></li>
+<li><p><strong>kwargs</strong> – Additional keyword arguments for drawing components. see <a class="reference internal" href="../../world/index.html#irsim.world.ObjectBase.plot" title="irsim.world.ObjectBase.plot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ObjectBase.plot()</span></code></a> function for detail.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.show">
+<span class="sig-name descname"><span class="pre">show</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.show"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.show" title="Link to this definition">#</a></dt>
+<dd><p>Show the environment figure.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.draw_trajectory">
+<span class="sig-name descname"><span class="pre">draw_trajectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">traj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">traj_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'g-'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.draw_trajectory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.draw_trajectory" title="Link to this definition">#</a></dt>
+<dd><p>Draw the trajectory on the environment figure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>traj</strong> (<em>list</em>) – List of trajectory points (2 * 1 vector).</p></li>
+<li><p><strong>traj_type</strong> – Type of the trajectory line, see matplotlib plot function for detail.</p></li>
+<li><p><strong>**kwargs</strong> – Additional keyword arguments for drawing the trajectory, see <a class="reference internal" href="../env_plot/index.html#irsim.env.env_plot.EnvPlot.draw_trajectory" title="irsim.env.env_plot.EnvPlot.draw_trajectory"><code class="xref py py-meth docutils literal notranslate"><span class="pre">EnvPlot.draw_trajectory()</span></code></a> for detail.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.draw_points">
+<span class="sig-name descname"><span class="pre">draw_points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'b'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">refresh</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.draw_points"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.draw_points" title="Link to this definition">#</a></dt>
+<dd><p>Draw points on the environment figure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points</strong> (<em>list</em>) – List of points (2*1) to be drawn.
+or (np.array): (2, Num) to be drawn.</p></li>
+<li><p><strong>s</strong> (<em>int</em>) – Size of the points.</p></li>
+<li><p><strong>c</strong> (<em>str</em>) – Color of the points.</p></li>
+<li><p><strong>refresh</strong> (<em>bool</em>) – Flag to refresh the points in the figure.</p></li>
+<li><p><strong>**kwargs</strong> – Additional keyword arguments for drawing the points, see <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.scatter.html">ax.scatter</a> function for detail.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.draw_box">
+<span class="sig-name descname"><span class="pre">draw_box</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vertex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">refresh</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'-b'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.draw_box"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.draw_box" title="Link to this definition">#</a></dt>
+<dd><p>Draw a box by the vertices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vertex</strong> (<em>np.ndarray</em>) – matrix of vertices, point_dim*vertex_num</p></li>
+<li><p><strong>refresh</strong> (<em>bool</em>) – whether to refresh the plot, default True</p></li>
+<li><p><strong>color</strong> (<em>str</em>) – color of the box, default ‘-b’</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.draw_quiver">
+<span class="sig-name descname"><span class="pre">draw_quiver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">refresh</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.draw_quiver"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.draw_quiver" title="Link to this definition">#</a></dt>
+<dd><p>Draw a single quiver (arrow) on the environment figure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>point</strong> – Point data for the quiver</p></li>
+<li><p><strong>refresh</strong> (<em>bool</em>) – Flag to refresh the quiver in the figure, default False</p></li>
+<li><p><strong>**kwargs</strong> – Additional keyword arguments for drawing the quiver</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.draw_quivers">
+<span class="sig-name descname"><span class="pre">draw_quivers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">refresh</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.draw_quivers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.draw_quivers" title="Link to this definition">#</a></dt>
+<dd><p>Draw multiple quivers (arrows) on the environment figure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points</strong> – Points data for the quivers</p></li>
+<li><p><strong>refresh</strong> (<em>bool</em>) – Flag to refresh the quivers in the figure, default False</p></li>
+<li><p><strong>**kwargs</strong> – Additional keyword arguments for drawing the quivers</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.end">
+<span class="sig-name descname"><span class="pre">end</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ending_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3.0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.end"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.end" title="Link to this definition">#</a></dt>
+<dd><p>End the simulation, save the animation, and close the environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ending_time</strong> (<em>float</em>) – Time in seconds to wait before closing the figure, default is 3 seconds.</p></li>
+<li><p><strong>**kwargs</strong> – Additional keyword arguments for saving the animation, see <a class="reference internal" href="../env_plot/index.html#irsim.env.env_plot.EnvPlot.save_animate" title="irsim.env.env_plot.EnvPlot.save_animate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">EnvPlot.save_animate()</span></code></a> for detail.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.done">
+<span class="sig-name descname"><span class="pre">done</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'all'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.done"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.done" title="Link to this definition">#</a></dt>
+<dd><p>Check if the simulation should terminate based on robot completion status.</p>
+<p>This method evaluates whether robots in the environment have reached their
+goals or completed their tasks, using different criteria based on the mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mode</strong> (<em>str</em>) – <p>Termination condition mode. Options are:</p>
+<ul class="simple">
+<li><p>”all”: Simulation is done when ALL robots have completed their tasks</p></li>
+<li><p>”any”: Simulation is done when ANY robot has completed its task</p></li>
+</ul>
+<p>Default is “all”.</p>
+</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the termination condition is met based on the specified mode,
+False otherwise. Returns False if no robots are present in the environment.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Check if all robots have reached their goals</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">env</span><span class="o">.</span><span class="n">done</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All robots completed!&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Check if any robot has completed</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">env</span><span class="o">.</span><span class="n">done</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s2">&quot;any&quot;</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;At least one robot completed!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.step_status">
+<span class="sig-name descname"><span class="pre">step_status</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.step_status"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.step_status" title="Link to this definition">#</a></dt>
+<dd><p>Update and log the current status of all robots in the environment.</p>
+<p>This method checks the arrival status of all robots and logs information
+about which robots have reached their goals. It’s automatically called
+during each simulation step.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is an internal method primarily used for status tracking and logging.
+The status information is automatically updated during simulation steps.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.pause">
+<span class="sig-name descname"><span class="pre">pause</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.pause"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.pause" title="Link to this definition">#</a></dt>
+<dd><p>Pause the simulation execution.</p>
+<p>When paused, calls to <a class="reference internal" href="#irsim.env.env_base.EnvBase.step" title="irsim.env.env_base.EnvBase.step"><code class="xref py py-meth docutils literal notranslate"><span class="pre">step()</span></code></a> will return immediately without
+performing any simulation updates. The environment status is set to “Pause”.</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">env</span><span class="o">.</span><span class="n">pause</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>  <span class="c1"># This will have no effect while paused</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.resume">
+<span class="sig-name descname"><span class="pre">resume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.resume"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.resume" title="Link to this definition">#</a></dt>
+<dd><p>Resume the simulation execution after being paused.</p>
+<p>Re-enables simulation updates and sets the environment status back to “Running”.
+Subsequent calls to <a class="reference internal" href="#irsim.env.env_base.EnvBase.step" title="irsim.env.env_base.EnvBase.step"><code class="xref py py-meth docutils literal notranslate"><span class="pre">step()</span></code></a> will function normally.</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">env</span><span class="o">.</span><span class="n">pause</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># ... some time later ...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">env</span><span class="o">.</span><span class="n">resume</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>  <span class="c1"># This will now work again</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.reset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.reset" title="Link to this definition">#</a></dt>
+<dd><p>Reset the environment to its initial state.</p>
+<p>This method resets all objects, robots, obstacles, and the world to their
+initial configurations. It also resets the visualization and sets the
+environment status to “Reset”.</p>
+<p>The reset process includes:
+- Resetting all objects to their initial positions and states
+- Clearing accumulated trajectories and sensor data
+- Resetting the world timer and status
+- Refreshing the visualization plot</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Reset environment after simulation</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Environment is now ready for a new simulation run</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.reset_plot">
+<span class="sig-name descname"><span class="pre">reset_plot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.reset_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.reset_plot" title="Link to this definition">#</a></dt>
+<dd><p>Reset the environment figure.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.random_obstacle_position">
+<span class="sig-name descname"><span class="pre">random_obstacle_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">range_low</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">range_high</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">non_overlapping</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.random_obstacle_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.random_obstacle_position" title="Link to this definition">#</a></dt>
+<dd><p>Random obstacle positions in the environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>range_low</strong> (<em>list</em><em> [</em><em>x</em><em>, </em><em>y</em><em>, </em><em>theta</em><em>]</em>) – Lower bound of the random range for the obstacle states. Default is [0, 0, -3.14].</p></li>
+<li><p><strong>range_high</strong> (<em>list</em><em> [</em><em>x</em><em>, </em><em>y</em><em>, </em><em>theta</em><em>]</em>) – Upper bound of the random range for the obstacle states. Default is [10, 10, 3.14].</p></li>
+<li><p><strong>ids</strong> (<em>list</em>) – A list of IDs of objects for which to set random positions. Default is None.</p></li>
+<li><p><strong>non_overlapping</strong> (<em>bool</em>) – If set, the obstacles that will be reset to random obstacles will not overlap with other obstacles. Default is False.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.random_polygon_shape">
+<span class="sig-name descname"><span class="pre">random_polygon_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">center_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">avg_radius_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">irregularity_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spikeyness_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_vertices_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.random_polygon_shape"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.random_polygon_shape" title="Link to this definition">#</a></dt>
+<dd><p>Random polygon shapes for the obstacles in the environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>center_range</strong> (<em>list</em>) – Range of the center of the polygon. Default is [0, 0, 10, 10].</p></li>
+<li><p><strong>avg_radius_range</strong> (<em>list</em>) – Range of the average radius of the polygon. Default is [0.1, 1].</p></li>
+<li><p><strong>irregularity_range</strong> (<em>list</em>) – Range of the irregularity of the polygon. Default is [0, 1].</p></li>
+<li><p><strong>spikeyness_range</strong> (<em>list</em>) – Range of the spikeyness of the polygon. Default is [0, 1].</p></li>
+<li><p><strong>num_vertices_range</strong> (<em>list</em>) – Range of the number of vertices of the polygon. Default is [4, 10].</p></li>
+<li><p><strong>center</strong> (<em>Tuple</em><em>[</em><em>float</em><em>, </em><em>float</em><em>]</em>) – a pair representing the center of the circumference used
+to generate the polygon.</p></li>
+<li><p><strong>avg_radius</strong> (<em>float</em>) – the average radius (distance of each generated vertex to
+the center of the circumference) used to generate points
+with a normal distribution.</p></li>
+<li><p><strong>irregularity</strong> (<em>float</em>) – 0 - 1
+variance of the spacing of the angles between consecutive
+vertices.</p></li>
+<li><p><strong>spikeyness</strong> (<em>float</em>) – 0 - 1
+variance of the distance of each vertex to the center of
+the circumference.</p></li>
+<li><p><strong>num_vertices</strong> (<em>int</em>) – the number of vertices of the polygon.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.create_obstacle">
+<span class="sig-name descname"><span class="pre">create_obstacle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.create_obstacle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.create_obstacle" title="Link to this definition">#</a></dt>
+<dd><p>Create an obstacle in the environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> – Additional parameters for obstacle creation.
+see ObjectFactory.create_obstacle for detail</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An instance of an obstacle.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Obstacle</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.add_object">
+<span class="sig-name descname"><span class="pre">add_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../../world/index.html#irsim.world.ObjectBase" title="irsim.world.ObjectBase"><span class="pre">irsim.world.ObjectBase</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.add_object"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.add_object" title="Link to this definition">#</a></dt>
+<dd><p>Add the object to the environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference internal" href="../../world/index.html#irsim.world.ObjectBase" title="irsim.world.ObjectBase"><em>ObjectBase</em></a>) – The object to be added to the environment.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.add_objects">
+<span class="sig-name descname"><span class="pre">add_objects</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../../world/index.html#irsim.world.ObjectBase" title="irsim.world.ObjectBase"><span class="pre">irsim.world.ObjectBase</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.add_objects"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.add_objects" title="Link to this definition">#</a></dt>
+<dd><p>Add the objects to the environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>objs</strong> (<em>list</em>) – List of objects to be added to the environment.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.delete_object">
+<span class="sig-name descname"><span class="pre">delete_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.delete_object"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.delete_object" title="Link to this definition">#</a></dt>
+<dd><p>Delete the object with the given id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>target_id</strong> (<em>int</em>) – ID of the object to be deleted.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.delete_objects">
+<span class="sig-name descname"><span class="pre">delete_objects</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.delete_objects"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.delete_objects" title="Link to this definition">#</a></dt>
+<dd><p>Delete the objects with the given ids.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>target_ids</strong> (<em>list</em>) – List of IDs of objects to be deleted.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.build_tree">
+<span class="sig-name descname"><span class="pre">build_tree</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.build_tree"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.build_tree" title="Link to this definition">#</a></dt>
+<dd><p>Build the geometry tree for the objects in the environment to detect the possible collision objects.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.get_robot_state">
+<span class="sig-name descname"><span class="pre">get_robot_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span></span></span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.get_robot_state"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.get_robot_state" title="Link to this definition">#</a></dt>
+<dd><p>Get the current state of the robot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>3*1 vector [x, y, theta]</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>state</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.get_lidar_scan">
+<span class="sig-name descname"><span class="pre">get_lidar_scan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.get_lidar_scan"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.get_lidar_scan" title="Link to this definition">#</a></dt>
+<dd><p>Get the lidar scan of the robot with the given id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>int</em>) – Id of the robot.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dict of lidar scan points, see <a class="reference internal" href="../../world/sensors/lidar2d/index.html#irsim.world.sensors.lidar2d.Lidar2D.get_scan" title="irsim.world.sensors.lidar2d.Lidar2D.get_scan"><code class="xref py py-meth docutils literal notranslate"><span class="pre">world.sensors.lidar2d.Lidar2D.get_scan()</span></code></a> for detail.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.get_lidar_offset">
+<span class="sig-name descname"><span class="pre">get_lidar_offset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.get_lidar_offset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.get_lidar_offset" title="Link to this definition">#</a></dt>
+<dd><p>Get the lidar offset of the robot with the given id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>int</em>) – Id of the robot.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Lidar offset of the robot, [x, y, theta]</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.get_obstacle_info_list">
+<span class="sig-name descname"><span class="pre">get_obstacle_info_list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.get_obstacle_info_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.get_obstacle_info_list" title="Link to this definition">#</a></dt>
+<dd><p>Get the information of the obstacles in the environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of obstacle information, see <a class="reference internal" href="../../world/index.html#irsim.world.ObjectBase.get_obstacle_info" title="irsim.world.ObjectBase.get_obstacle_info"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ObjectBase.get_obstacle_info()</span></code></a> for detail.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.get_robot_info">
+<span class="sig-name descname"><span class="pre">get_robot_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.get_robot_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.get_robot_info" title="Link to this definition">#</a></dt>
+<dd><p>Get the information of the robot with the given id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>int</em>) – Id of the robot.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>see <a class="reference internal" href="../../world/index.html#irsim.world.ObjectBase.get_info" title="irsim.world.ObjectBase.get_info"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ObjectBase.get_info()</span></code></a> for detail</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.get_robot_info_list">
+<span class="sig-name descname"><span class="pre">get_robot_info_list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.get_robot_info_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.get_robot_info_list" title="Link to this definition">#</a></dt>
+<dd><p>Get the information of the robots in the environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of robot information, see <a class="reference internal" href="../../world/index.html#irsim.world.ObjectBase.get_info" title="irsim.world.ObjectBase.get_info"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ObjectBase.get_info()</span></code></a> for detail.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.get_map">
+<span class="sig-name descname"><span class="pre">get_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.get_map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.get_map" title="Link to this definition">#</a></dt>
+<dd><p>Get the map of the environment with the given resolution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>resolution</strong> (<em>float</em>) – Resolution of the map. Default is 0.1.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The map of the environment with the specified resolution.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.set_title">
+<span class="sig-name descname"><span class="pre">set_title</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.set_title"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.set_title" title="Link to this definition">#</a></dt>
+<dd><p>Set the title of the plot.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.save_figure">
+<span class="sig-name descname"><span class="pre">save_figure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_gif</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.save_figure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.save_figure" title="Link to this definition">#</a></dt>
+<dd><p>Save the current figure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>save_name</strong> (<em>str</em>) – Name of the file with format to save the figure. Default is None.</p></li>
+<li><p><strong>include_index</strong> (<em>bool</em>) – Flag to include index in the saved file name. Default is False.</p></li>
+<li><p><strong>save_gif</strong> (<em>bool</em>) – Flag to save as GIF format. Default is False.</p></li>
+<li><p><strong>**kwargs</strong> – <p>Additional keyword arguments for saving the figure, see <a class="reference external" href="https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.savefig.html">savefig</a> function for detail.</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.load_behavior">
+<span class="sig-name descname"><span class="pre">load_behavior</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">behaviors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'behavior_methods'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../../_modules/irsim/env/env_base.html#EnvBase.load_behavior"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.env.env_base.EnvBase.load_behavior" title="Link to this definition">#</a></dt>
+<dd><p>Load behavior parameters from the script. Please refer to the behavior_methods.py file for more details.
+Please make sure the python file is placed in the same folder with the implemented script.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>behaviors</strong> (<em>str</em>) – name of the bevavior script.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.robot_list">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">robot_list</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../../world/index.html#irsim.world.ObjectBase" title="irsim.world.ObjectBase"><span class="pre">irsim.world.ObjectBase</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#irsim.env.env_base.EnvBase.robot_list" title="Link to this definition">#</a></dt>
+<dd><p>Get the list of robots in the environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of robot objects [].</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.obstacle_list">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">obstacle_list</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../../world/index.html#irsim.world.ObjectBase" title="irsim.world.ObjectBase"><span class="pre">irsim.world.ObjectBase</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#irsim.env.env_base.EnvBase.obstacle_list" title="Link to this definition">#</a></dt>
+<dd><p>Get the list of obstacles in the environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of obstacle objects.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id4">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../../world/index.html#irsim.world.ObjectBase" title="irsim.world.ObjectBase"><span class="pre">irsim.world.ObjectBase</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#id4" title="Link to this definition">#</a></dt>
+<dd><p>Get all objects in the environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of all objects in the environment.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.static_objects">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">static_objects</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../../world/index.html#irsim.world.ObjectBase" title="irsim.world.ObjectBase"><span class="pre">irsim.world.ObjectBase</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#irsim.env.env_base.EnvBase.static_objects" title="Link to this definition">#</a></dt>
+<dd><p>Get all static objects in the environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of static objects in the environment.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.dynamic_objects">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dynamic_objects</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../../world/index.html#irsim.world.ObjectBase" title="irsim.world.ObjectBase"><span class="pre">irsim.world.ObjectBase</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#irsim.env.env_base.EnvBase.dynamic_objects" title="Link to this definition">#</a></dt>
+<dd><p>Get all dynamic objects in the environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of dynamic objects in the environment.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.step_time">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">step_time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#irsim.env.env_base.EnvBase.step_time" title="Link to this definition">#</a></dt>
+<dd><p>Get the step time of the simulation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Step time of the simulation from the world.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.time">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#irsim.env.env_base.EnvBase.time" title="Link to this definition">#</a></dt>
+<dd><p>Get the time of the simulation.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.status">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">status</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#irsim.env.env_base.EnvBase.status" title="Link to this definition">#</a></dt>
+<dd><p>Get the status of the environment.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.robot">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">robot</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../../world/index.html#irsim.world.ObjectBase" title="irsim.world.ObjectBase"><span class="pre">irsim.world.ObjectBase</span></a></em><a class="headerlink" href="#irsim.env.env_base.EnvBase.robot" title="Link to this definition">#</a></dt>
+<dd><p>Get the first robot in the environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The first robot object in the robot list.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Robot</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.obstacle_number">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">obstacle_number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#irsim.env.env_base.EnvBase.obstacle_number" title="Link to this definition">#</a></dt>
+<dd><p>Get the number of obstacles in the environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Number of obstacles in the environment.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.robot_number">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">robot_number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#irsim.env.env_base.EnvBase.robot_number" title="Link to this definition">#</a></dt>
+<dd><p>Get the number of robots in the environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Number of robots in the environment.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.logger">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">logger</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../env_logger/index.html#irsim.env.env_logger.EnvLogger" title="irsim.env.env_logger.EnvLogger"><span class="pre">irsim.env.env_logger.EnvLogger</span></a></em><a class="headerlink" href="#irsim.env.env_base.EnvBase.logger" title="Link to this definition">#</a></dt>
+<dd><p>Get the environment logger.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The logger instance for the environment.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../env_logger/index.html#irsim.env.env_logger.EnvLogger" title="irsim.env.env_logger.EnvLogger">EnvLogger</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.key_vel">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">key_vel</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Any</span></em><a class="headerlink" href="#irsim.env.env_base.EnvBase.key_vel" title="Link to this definition">#</a></dt>
+<dd><p>Get current keyboard velocity command.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A 2x1 vector <code class="docutils literal notranslate"><span class="pre">[[linear],</span> <span class="pre">[angular]]</span></code> from keyboard input.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.key_id">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">key_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#irsim.env.env_base.EnvBase.key_id" title="Link to this definition">#</a></dt>
+<dd><p>Get current keyboard-controlled robot id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The robot id currently controlled by keyboard.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.mouse_pos">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mouse_pos</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Any</span></em><a class="headerlink" href="#irsim.env.env_base.EnvBase.mouse_pos" title="Link to this definition">#</a></dt>
+<dd><p>Get current mouse position on the canvas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Mouse coordinates <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code> if outside axes.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.mouse_left_pos">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mouse_left_pos</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Any</span></em><a class="headerlink" href="#irsim.env.env_base.EnvBase.mouse_left_pos" title="Link to this definition">#</a></dt>
+<dd><p>Get last left-click position.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Position array or <code class="docutils literal notranslate"><span class="pre">None</span></code> if not set.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="irsim.env.env_base.EnvBase.mouse_right_pos">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mouse_right_pos</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Any</span></em><a class="headerlink" href="#irsim.env.env_base.EnvBase.mouse_right_pos" title="Link to this definition">#</a></dt>
+<dd><p>Get last right-click position.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Position array or <code class="docutils literal notranslate"><span class="pre">None</span></code> if not set.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">irsim.env</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../env_base3d/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">irsim.env.env_base3d</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.keyboard_module"><code class="docutils literal notranslate"><span class="pre">keyboard_module</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.BACKEND_PREFERENCES"><code class="docutils literal notranslate"><span class="pre">BACKEND_PREFERENCES</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.backends"><code class="docutils literal notranslate"><span class="pre">backends</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.backend_set"><code class="docutils literal notranslate"><span class="pre">backend_set</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase"><code class="docutils literal notranslate"><span class="pre">EnvBase</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.display"><code class="docutils literal notranslate"><span class="pre">EnvBase.display</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.disable_all_plot"><code class="docutils literal notranslate"><span class="pre">EnvBase.disable_all_plot</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.save_ani"><code class="docutils literal notranslate"><span class="pre">EnvBase.save_ani</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.objects"><code class="docutils literal notranslate"><span class="pre">EnvBase.objects</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.world"><code class="docutils literal notranslate"><span class="pre">EnvBase.world</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.robot_collection"><code class="docutils literal notranslate"><span class="pre">EnvBase.robot_collection</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.obstacle_collection"><code class="docutils literal notranslate"><span class="pre">EnvBase.obstacle_collection</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.map_collection"><code class="docutils literal notranslate"><span class="pre">EnvBase.map_collection</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">EnvBase.display</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><code class="docutils literal notranslate"><span class="pre">EnvBase.disable_all_plot</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><code class="docutils literal notranslate"><span class="pre">EnvBase.save_ani</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.env_config"><code class="docutils literal notranslate"><span class="pre">EnvBase.env_config</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.object_factory"><code class="docutils literal notranslate"><span class="pre">EnvBase.object_factory</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.mouse"><code class="docutils literal notranslate"><span class="pre">EnvBase.mouse</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.pause_flag"><code class="docutils literal notranslate"><span class="pre">EnvBase.pause_flag</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.step"><code class="docutils literal notranslate"><span class="pre">EnvBase.step()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.render"><code class="docutils literal notranslate"><span class="pre">EnvBase.render()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.show"><code class="docutils literal notranslate"><span class="pre">EnvBase.show()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.draw_trajectory"><code class="docutils literal notranslate"><span class="pre">EnvBase.draw_trajectory()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.draw_points"><code class="docutils literal notranslate"><span class="pre">EnvBase.draw_points()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.draw_box"><code class="docutils literal notranslate"><span class="pre">EnvBase.draw_box()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.draw_quiver"><code class="docutils literal notranslate"><span class="pre">EnvBase.draw_quiver()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.draw_quivers"><code class="docutils literal notranslate"><span class="pre">EnvBase.draw_quivers()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.end"><code class="docutils literal notranslate"><span class="pre">EnvBase.end()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.done"><code class="docutils literal notranslate"><span class="pre">EnvBase.done()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.step_status"><code class="docutils literal notranslate"><span class="pre">EnvBase.step_status()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.pause"><code class="docutils literal notranslate"><span class="pre">EnvBase.pause()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.resume"><code class="docutils literal notranslate"><span class="pre">EnvBase.resume()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.reset"><code class="docutils literal notranslate"><span class="pre">EnvBase.reset()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.reset_plot"><code class="docutils literal notranslate"><span class="pre">EnvBase.reset_plot()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.random_obstacle_position"><code class="docutils literal notranslate"><span class="pre">EnvBase.random_obstacle_position()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.random_polygon_shape"><code class="docutils literal notranslate"><span class="pre">EnvBase.random_polygon_shape()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.create_obstacle"><code class="docutils literal notranslate"><span class="pre">EnvBase.create_obstacle()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.add_object"><code class="docutils literal notranslate"><span class="pre">EnvBase.add_object()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.add_objects"><code class="docutils literal notranslate"><span class="pre">EnvBase.add_objects()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.delete_object"><code class="docutils literal notranslate"><span class="pre">EnvBase.delete_object()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.delete_objects"><code class="docutils literal notranslate"><span class="pre">EnvBase.delete_objects()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.build_tree"><code class="docutils literal notranslate"><span class="pre">EnvBase.build_tree()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.get_robot_state"><code class="docutils literal notranslate"><span class="pre">EnvBase.get_robot_state()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.get_lidar_scan"><code class="docutils literal notranslate"><span class="pre">EnvBase.get_lidar_scan()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.get_lidar_offset"><code class="docutils literal notranslate"><span class="pre">EnvBase.get_lidar_offset()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.get_obstacle_info_list"><code class="docutils literal notranslate"><span class="pre">EnvBase.get_obstacle_info_list()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.get_robot_info"><code class="docutils literal notranslate"><span class="pre">EnvBase.get_robot_info()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.get_robot_info_list"><code class="docutils literal notranslate"><span class="pre">EnvBase.get_robot_info_list()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.get_map"><code class="docutils literal notranslate"><span class="pre">EnvBase.get_map()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.set_title"><code class="docutils literal notranslate"><span class="pre">EnvBase.set_title()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.save_figure"><code class="docutils literal notranslate"><span class="pre">EnvBase.save_figure()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.load_behavior"><code class="docutils literal notranslate"><span class="pre">EnvBase.load_behavior()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.robot_list"><code class="docutils literal notranslate"><span class="pre">EnvBase.robot_list</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.obstacle_list"><code class="docutils literal notranslate"><span class="pre">EnvBase.obstacle_list</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><code class="docutils literal notranslate"><span class="pre">EnvBase.objects</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.static_objects"><code class="docutils literal notranslate"><span class="pre">EnvBase.static_objects</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.dynamic_objects"><code class="docutils literal notranslate"><span class="pre">EnvBase.dynamic_objects</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.step_time"><code class="docutils literal notranslate"><span class="pre">EnvBase.step_time</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.time"><code class="docutils literal notranslate"><span class="pre">EnvBase.time</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.status"><code class="docutils literal notranslate"><span class="pre">EnvBase.status</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.robot"><code class="docutils literal notranslate"><span class="pre">EnvBase.robot</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.obstacle_number"><code class="docutils literal notranslate"><span class="pre">EnvBase.obstacle_number</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.robot_number"><code class="docutils literal notranslate"><span class="pre">EnvBase.robot_number</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.logger"><code class="docutils literal notranslate"><span class="pre">EnvBase.logger</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.key_vel"><code class="docutils literal notranslate"><span class="pre">EnvBase.key_vel</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.key_id"><code class="docutils literal notranslate"><span class="pre">EnvBase.key_id</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.mouse_pos"><code class="docutils literal notranslate"><span class="pre">EnvBase.mouse_pos</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.mouse_left_pos"><code class="docutils literal notranslate"><span class="pre">EnvBase.mouse_left_pos</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.env.env_base.EnvBase.mouse_right_pos"><code class="docutils literal notranslate"><span class="pre">EnvBase.mouse_right_pos</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/api/irsim/env/env_base/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Ruihua Han.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

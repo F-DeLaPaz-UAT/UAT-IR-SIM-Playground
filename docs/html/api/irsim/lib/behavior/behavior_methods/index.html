@@ -1,0 +1,899 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>irsim.lib.behavior.behavior_methods &#8212; IR-SIM 2.7.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/my_theme.css?v=20c2511c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../../../_static/documentation_options.js?v=dfec817d"></script>
+    <script src="../../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../../../_static/tabs.js?v=3ee01567"></script>
+    <script src="../../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/irsim/lib/behavior/behavior_methods/index';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://raw.githubusercontent.com/hanruihua/ir-sim/main/docs/source/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '2.7.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <script defer="defer" src="../../../../../_static/custom-icons.js?v=5b19a0d0"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="irsim.lib.behavior.behavior_registry" href="../behavior_registry/index.html" />
+    <link rel="prev" title="irsim.lib.behavior.behavior" href="../behavior/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">IR-SIM 2.7.0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../get_started/index.html">
+    Get Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../usage/index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../yaml_config/index.html">
+    YAML Configuration Syntax
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/hanruihua/ir-sim" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/ir-sim/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-custom fa-pypi fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../get_started/index.html">
+    Get Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../usage/index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../yaml_config/index.html">
+    YAML Configuration Syntax
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/hanruihua/ir-sim" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/ir-sim/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-custom fa-pypi fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../algorithm/index.html">irsim.lib.algorithm</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/generation/index.html">irsim.lib.algorithm.generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/kinematics/index.html">irsim.lib.algorithm.kinematics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algorithm/rvo/index.html">irsim.lib.algorithm.rvo</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">irsim.lib.behavior</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../behavior/index.html">irsim.lib.behavior.behavior</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">irsim.lib.behavior.behavior_methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../behavior_registry/index.html">irsim.lib.behavior.behavior_registry</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../handler/index.html">irsim.lib.handler</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../handler/geometry_handler/index.html">irsim.lib.handler.geometry_handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../handler/kinematics_handler/index.html">irsim.lib.handler.kinematics_handler</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../path_planners/index.html">irsim.lib.path_planners</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../path_planners/a_star/index.html">irsim.lib.path_planners.a_star</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../path_planners/probabilistic_road_map/index.html">irsim.lib.path_planners.probabilistic_road_map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../path_planners/rrt/index.html">irsim.lib.path_planners.rrt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../path_planners/rrt_star/index.html">irsim.lib.path_planners.rrt_star</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../../index.html" class="nav-link">API Reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">irsim.lib</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">irsim.lib.behavior</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">irsim.lib.behavior.behavior_methods</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-irsim.lib.behavior.behavior_methods">
+<span id="irsim-lib-behavior-behavior-methods"></span><h1>irsim.lib.behavior.behavior_methods<a class="headerlink" href="#module-irsim.lib.behavior.behavior_methods" title="Link to this heading">#</a></h1>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#irsim.lib.behavior.behavior_methods.beh_diff_rvo" title="irsim.lib.behavior.behavior_methods.beh_diff_rvo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">beh_diff_rvo</span></code></a>(→ numpy.ndarray)</p></td>
+<td><p>Behavior function for differential drive robot using RVO (Reciprocal Velocity Obstacles).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#irsim.lib.behavior.behavior_methods.beh_diff_dash" title="irsim.lib.behavior.behavior_methods.beh_diff_dash"><code class="xref py py-obj docutils literal notranslate"><span class="pre">beh_diff_dash</span></code></a>(→ numpy.ndarray)</p></td>
+<td><p>Behavior function for differential drive robot using dash-to-goal behavior.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#irsim.lib.behavior.behavior_methods.beh_omni_dash" title="irsim.lib.behavior.behavior_methods.beh_omni_dash"><code class="xref py py-obj docutils literal notranslate"><span class="pre">beh_omni_dash</span></code></a>(→ numpy.ndarray)</p></td>
+<td><p>Behavior function for omnidirectional robot using dash-to-goal behavior.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#irsim.lib.behavior.behavior_methods.beh_omni_rvo" title="irsim.lib.behavior.behavior_methods.beh_omni_rvo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">beh_omni_rvo</span></code></a>(→ numpy.ndarray)</p></td>
+<td><p>Behavior function for omnidirectional robot using RVO (Reciprocal Velocity Obstacles).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#irsim.lib.behavior.behavior_methods.beh_acker_dash" title="irsim.lib.behavior.behavior_methods.beh_acker_dash"><code class="xref py py-obj docutils literal notranslate"><span class="pre">beh_acker_dash</span></code></a>(→ numpy.ndarray)</p></td>
+<td><p>Behavior function for Ackermann steering robot using dash-to-goal behavior.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#irsim.lib.behavior.behavior_methods.OmniRVO" title="irsim.lib.behavior.behavior_methods.OmniRVO"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OmniRVO</span></code></a>(→ numpy.ndarray)</p></td>
+<td><p>Calculate the omnidirectional velocity using RVO.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#irsim.lib.behavior.behavior_methods.DiffRVO" title="irsim.lib.behavior.behavior_methods.DiffRVO"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DiffRVO</span></code></a>(→ numpy.ndarray)</p></td>
+<td><p>Calculate the differential drive velocity using RVO.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#irsim.lib.behavior.behavior_methods.OmniDash" title="irsim.lib.behavior.behavior_methods.OmniDash"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OmniDash</span></code></a>(→ numpy.ndarray)</p></td>
+<td><p>Calculate the omnidirectional velocity to reach a goal.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#irsim.lib.behavior.behavior_methods.DiffDash" title="irsim.lib.behavior.behavior_methods.DiffDash"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DiffDash</span></code></a>(→ numpy.ndarray)</p></td>
+<td><p>Calculate the differential drive velocity to reach a goal.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#irsim.lib.behavior.behavior_methods.AckerDash" title="irsim.lib.behavior.behavior_methods.AckerDash"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AckerDash</span></code></a>(→ numpy.ndarray)</p></td>
+<td><p>Calculate the Ackermann steering velocity to reach a goal.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="irsim.lib.behavior.behavior_methods.beh_diff_rvo">
+<span class="sig-prename descclassname"><span class="pre">irsim.lib.behavior.behavior_methods.</span></span><span class="sig-name descname"><span class="pre">beh_diff_rvo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ego_object</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">external_objects</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span></span></span><a class="reference internal" href="../../../../../_modules/irsim/lib/behavior/behavior_methods.html#beh_diff_rvo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.lib.behavior.behavior_methods.beh_diff_rvo" title="Link to this definition">#</a></dt>
+<dd><p>Behavior function for differential drive robot using RVO (Reciprocal Velocity Obstacles).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ego_object</strong> – The ego robot object.</p></li>
+<li><p><strong>external_objects</strong> (<em>list</em>) – List of external objects in the environment.</p></li>
+<li><p><strong>**kwargs</strong> – Additional keyword arguments:
+- vxmax (float): Maximum x velocity, default 1.5.
+- vymax (float): Maximum y velocity, default 1.5.
+- acce (float): Acceleration factor, default 1.0.
+- factor (float): Additional scaling factor, default 1.0.
+- mode (str): RVO calculation mode, default “rvo”.
+- neighbor_threshold (float): Neighbor threshold distance, default 10.0.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Velocity [linear, angular] (2x1) for differential drive.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="irsim.lib.behavior.behavior_methods.beh_diff_dash">
+<span class="sig-prename descclassname"><span class="pre">irsim.lib.behavior.behavior_methods.</span></span><span class="sig-name descname"><span class="pre">beh_diff_dash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ego_object</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">external_objects</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span></span></span><a class="reference internal" href="../../../../../_modules/irsim/lib/behavior/behavior_methods.html#beh_diff_dash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.lib.behavior.behavior_methods.beh_diff_dash" title="Link to this definition">#</a></dt>
+<dd><p>Behavior function for differential drive robot using dash-to-goal behavior.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ego_object</strong> – The ego robot object.</p></li>
+<li><p><strong>external_objects</strong> (<em>list</em>) – List of external objects in the environment.</p></li>
+<li><p><strong>**kwargs</strong> – Additional keyword arguments:
+- angle_tolerance (float): Allowable angular deviation, default 0.1.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Velocity [linear, angular] (2x1) for differential drive.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="irsim.lib.behavior.behavior_methods.beh_omni_dash">
+<span class="sig-prename descclassname"><span class="pre">irsim.lib.behavior.behavior_methods.</span></span><span class="sig-name descname"><span class="pre">beh_omni_dash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ego_object</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">external_objects</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span></span></span><a class="reference internal" href="../../../../../_modules/irsim/lib/behavior/behavior_methods.html#beh_omni_dash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.lib.behavior.behavior_methods.beh_omni_dash" title="Link to this definition">#</a></dt>
+<dd><p>Behavior function for omnidirectional robot using dash-to-goal behavior.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ego_object</strong> – The ego robot object.</p></li>
+<li><p><strong>external_objects</strong> (<em>list</em>) – List of external objects in the environment.</p></li>
+<li><p><strong>**kwargs</strong> – Additional keyword arguments (currently unused).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Velocity [vx, vy] (2x1) for omnidirectional drive.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="irsim.lib.behavior.behavior_methods.beh_omni_rvo">
+<span class="sig-prename descclassname"><span class="pre">irsim.lib.behavior.behavior_methods.</span></span><span class="sig-name descname"><span class="pre">beh_omni_rvo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ego_object</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">external_objects</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span></span></span><a class="reference internal" href="../../../../../_modules/irsim/lib/behavior/behavior_methods.html#beh_omni_rvo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.lib.behavior.behavior_methods.beh_omni_rvo" title="Link to this definition">#</a></dt>
+<dd><p>Behavior function for omnidirectional robot using RVO (Reciprocal Velocity Obstacles).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ego_object</strong> – The ego robot object.</p></li>
+<li><p><strong>external_objects</strong> (<em>list</em>) – List of external objects in the environment.</p></li>
+<li><p><strong>**kwargs</strong> – Additional keyword arguments:
+- vxmax (float): Maximum x velocity, default 1.5.
+- vymax (float): Maximum y velocity, default 1.5.
+- acce (float): Acceleration factor, default 1.0.
+- factor (float): Additional scaling factor, default 1.0.
+- mode (str): RVO calculation mode, default “rvo”.
+- neighbor_threshold (float): Neighbor threshold distance, default 3.0.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Velocity [vx, vy] (2x1) for omnidirectional drive.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="irsim.lib.behavior.behavior_methods.beh_acker_dash">
+<span class="sig-prename descclassname"><span class="pre">irsim.lib.behavior.behavior_methods.</span></span><span class="sig-name descname"><span class="pre">beh_acker_dash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ego_object</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">external_objects</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span></span></span><a class="reference internal" href="../../../../../_modules/irsim/lib/behavior/behavior_methods.html#beh_acker_dash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.lib.behavior.behavior_methods.beh_acker_dash" title="Link to this definition">#</a></dt>
+<dd><p>Behavior function for Ackermann steering robot using dash-to-goal behavior.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ego_object</strong> – The ego robot object.</p></li>
+<li><p><strong>external_objects</strong> (<em>list</em>) – List of external objects in the environment.</p></li>
+<li><p><strong>**kwargs</strong> – Additional keyword arguments:
+- angle_tolerance (float): Allowable angular deviation, default 0.1.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Velocity [linear, steering angle] (2x1) for Ackermann drive.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="irsim.lib.behavior.behavior_methods.OmniRVO">
+<span class="sig-prename descclassname"><span class="pre">irsim.lib.behavior.behavior_methods.</span></span><span class="sig-name descname"><span class="pre">OmniRVO</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state_tuple</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neighbor_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vxmax</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vymax</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acce</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'rvo'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neighbor_threshold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3.0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span></span></span><a class="reference internal" href="../../../../../_modules/irsim/lib/behavior/behavior_methods.html#OmniRVO"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.lib.behavior.behavior_methods.OmniRVO" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the omnidirectional velocity using RVO.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>state_tuple</strong> (<em>tuple</em>) – Current state and orientation.</p></li>
+<li><p><strong>neighbor_list</strong> (<em>list</em>) – List of neighboring agents (default None).</p></li>
+<li><p><strong>vxmax</strong> (<em>float</em>) – Maximum x velocity (default 1.5).</p></li>
+<li><p><strong>vymax</strong> (<em>float</em>) – Maximum y velocity (default 1.5).</p></li>
+<li><p><strong>acce</strong> (<em>float</em>) – Acceleration factor (default 1).</p></li>
+<li><p><strong>factor</strong> (<em>float</em>) – Additional scaling factor (default 1.0).</p></li>
+<li><p><strong>mode</strong> (<em>str</em>) – RVO calculation mode (default “rvo”).</p></li>
+<li><p><strong>neighbor_threshold</strong> (<em>float</em>) – Neighbor threshold (default 3.0).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Velocity [vx, vy] (2x1).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="irsim.lib.behavior.behavior_methods.DiffRVO">
+<span class="sig-prename descclassname"><span class="pre">irsim.lib.behavior.behavior_methods.</span></span><span class="sig-name descname"><span class="pre">DiffRVO</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state_tuple</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neighbor_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vxmax</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vymax</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acce</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'rvo'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neighbor_threshold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3.0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span></span></span><a class="reference internal" href="../../../../../_modules/irsim/lib/behavior/behavior_methods.html#DiffRVO"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.lib.behavior.behavior_methods.DiffRVO" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the differential drive velocity using RVO.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>state_tuple</strong> (<em>tuple</em>) – Current state and orientation.</p></li>
+<li><p><strong>neighbor_list</strong> (<em>list</em>) – List of neighboring agents (default None).</p></li>
+<li><p><strong>vxmax</strong> (<em>float</em>) – Maximum x velocity (default 1.5).</p></li>
+<li><p><strong>vymax</strong> (<em>float</em>) – Maximum y velocity (default 1.5).</p></li>
+<li><p><strong>acce</strong> (<em>float</em>) – Acceleration factor (default 1).</p></li>
+<li><p><strong>factor</strong> (<em>float</em>) – Additional scaling factor (default 1.0).</p></li>
+<li><p><strong>mode</strong> (<em>str</em>) – RVO calculation mode (default “rvo”).</p></li>
+<li><p><strong>neighbor_threshold</strong> (<em>float</em>) – Neighbor threshold (default 3.0).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Velocity [linear, angular] (2x1).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="irsim.lib.behavior.behavior_methods.OmniDash">
+<span class="sig-prename descclassname"><span class="pre">irsim.lib.behavior.behavior_methods.</span></span><span class="sig-name descname"><span class="pre">OmniDash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_vel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_threshold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span></span></span><a class="reference internal" href="../../../../../_modules/irsim/lib/behavior/behavior_methods.html#OmniDash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.lib.behavior.behavior_methods.OmniDash" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the omnidirectional velocity to reach a goal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>state</strong> (<em>np.array</em>) – Current state [x, y] (2x1).</p></li>
+<li><p><strong>goal</strong> (<em>np.array</em>) – Goal position [x, y] (2x1).</p></li>
+<li><p><strong>max_vel</strong> (<em>np.array</em>) – Maximum velocity [vx, vy] (2x1).</p></li>
+<li><p><strong>goal_threshold</strong> (<em>float</em>) – Distance threshold to consider goal reached (default 0.1).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Velocity [vx, vy] (2x1).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="irsim.lib.behavior.behavior_methods.DiffDash">
+<span class="sig-prename descclassname"><span class="pre">irsim.lib.behavior.behavior_methods.</span></span><span class="sig-name descname"><span class="pre">DiffDash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_vel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_threshold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle_tolerance</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.2</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span></span></span><a class="reference internal" href="../../../../../_modules/irsim/lib/behavior/behavior_methods.html#DiffDash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.lib.behavior.behavior_methods.DiffDash" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the differential drive velocity to reach a goal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>state</strong> (<em>np.array</em>) – Current state [x, y, theta] (3x1).</p></li>
+<li><p><strong>goal</strong> (<em>np.array</em>) – Goal position [x, y] (2x1).</p></li>
+<li><p><strong>max_vel</strong> (<em>np.array</em>) – Maximum velocity [linear, angular] (2x1).</p></li>
+<li><p><strong>goal_threshold</strong> (<em>float</em>) – Distance threshold to consider goal reached (default 0.1).</p></li>
+<li><p><strong>angle_tolerance</strong> (<em>float</em>) – Allowable angular deviation (default 0.2).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Velocity [linear, angular] (2x1).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="irsim.lib.behavior.behavior_methods.AckerDash">
+<span class="sig-prename descclassname"><span class="pre">irsim.lib.behavior.behavior_methods.</span></span><span class="sig-name descname"><span class="pre">AckerDash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_vel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_threshold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle_tolerance</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span></span></span><a class="reference internal" href="../../../../../_modules/irsim/lib/behavior/behavior_methods.html#AckerDash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#irsim.lib.behavior.behavior_methods.AckerDash" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the Ackermann steering velocity to reach a goal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>state</strong> (<em>np.array</em>) – Current state [x, y, theta] (3x1).</p></li>
+<li><p><strong>goal</strong> (<em>np.array</em>) – Goal position [x, y] (2x1).</p></li>
+<li><p><strong>max_vel</strong> (<em>np.array</em>) – Maximum velocity [linear, steering angle] (2x1).</p></li>
+<li><p><strong>goal_threshold</strong> (<em>float</em>) – Distance threshold to consider goal reached.</p></li>
+<li><p><strong>angle_tolerance</strong> (<em>float</em>) – Allowable angular deviation.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Velocity [linear, steering angle] (2x1).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../behavior/index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">irsim.lib.behavior.behavior</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../behavior_registry/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">irsim.lib.behavior.behavior_registry</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.lib.behavior.behavior_methods.beh_diff_rvo"><code class="docutils literal notranslate"><span class="pre">beh_diff_rvo()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.lib.behavior.behavior_methods.beh_diff_dash"><code class="docutils literal notranslate"><span class="pre">beh_diff_dash()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.lib.behavior.behavior_methods.beh_omni_dash"><code class="docutils literal notranslate"><span class="pre">beh_omni_dash()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.lib.behavior.behavior_methods.beh_omni_rvo"><code class="docutils literal notranslate"><span class="pre">beh_omni_rvo()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.lib.behavior.behavior_methods.beh_acker_dash"><code class="docutils literal notranslate"><span class="pre">beh_acker_dash()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.lib.behavior.behavior_methods.OmniRVO"><code class="docutils literal notranslate"><span class="pre">OmniRVO()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.lib.behavior.behavior_methods.DiffRVO"><code class="docutils literal notranslate"><span class="pre">DiffRVO()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.lib.behavior.behavior_methods.OmniDash"><code class="docutils literal notranslate"><span class="pre">OmniDash()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.lib.behavior.behavior_methods.DiffDash"><code class="docutils literal notranslate"><span class="pre">DiffDash()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#irsim.lib.behavior.behavior_methods.AckerDash"><code class="docutils literal notranslate"><span class="pre">AckerDash()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../_sources/api/irsim/lib/behavior/behavior_methods/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Ruihua Han.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
